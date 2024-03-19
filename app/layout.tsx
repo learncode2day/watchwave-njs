@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import AppContainer from './AppContainer';
 import BottomNavbar from '@/app/components/BottomNavbar';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from 'sonner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Viewport } from 'next';
 
@@ -211,7 +211,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body style={{ WebkitTapHighlightColor: 'transparent' }} className={inter.className + ' bg-background text-foreground dark'}>
 				<AppContainer>
 					<Navbar />
-					<Toaster />
+					<Toaster theme="dark" closeButton />
 					<BottomNavbar />
 					{children}
 

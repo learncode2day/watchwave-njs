@@ -248,27 +248,26 @@ async function fetchData() {
 }
 
 export default async function Home() {
+  const data = await fetchData();
+  //  for showcased, select random number (0 - 1) 50% chance of being 0 or 1
+  // if 0, showcase trending movie
+  // if 1, showcase trending tv
+  // after this pick number between 1 and 5 to showcase
+  const random = Math.floor(Math.random() * 2);
+  let showcased: MovieDetails | ShowDetails;
+  if (random === 0) {
+    showcased = data.trending_movies.collection[Math.floor(Math.random() * 6)];
+  } else {
+    showcased = data.trending_tv.collection[Math.floor(Math.random() * 6)];
+  }
 
-	const data = await fetchData();
-	//  for showcased, select random number (0 - 1) 50% chance of being 0 or 1
-	// if 0, showcase trending movie
-	// if 1, showcase trending tv
-	// after this pick number between 1 and 5 to showcase
-	const random = Math.floor(Math.random() * 2);
-	let showcased: MovieDetails | ShowDetails;
-	if (random === 0) {
-		showcased = data.trending_movies.collection[Math.floor(Math.random() * 6)];
-	} else {
-		showcased = data.trending_tv.collection[Math.floor(Math.random() * 6)];
-	}
+  // console.log('showcased', showcased);
+  // fetch with fetchDetails()
 
-	console.log('showcased', showcased);
-	// fetch with fetchDetails()
+  const res = await fetchDetails(showcased.id, showcased.media_type);
+  showcased = res;
 
-	const res = await fetchDetails(showcased.id, showcased.media_type);
-	showcased = res;
+  // console.log('showcased', showcased);
 
-	// console.log('showcased', showcased);
-
-	return <Showcase movie={showcased} collection={data} />;
+  return <Showcase movie={showcased} collection={data} />;
 }

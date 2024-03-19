@@ -4,6 +4,7 @@ import { Episode } from '@/types';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
 import { useSwiper } from 'swiper/react';
+import { getImagePath } from '../lib/tmdb';
 
 interface EpisodeCardProps {
 	episode: Episode;
@@ -38,7 +39,7 @@ const EpisodeCard: React.FC<EpisodeCardProps> = ({ episodeSelected, episode, set
 			{episode.still_path ? (
 				<Image
 					draggable={false}
-					src={`https://image.tmdb.org/t/p/original${episode.still_path}`}
+					src={getImagePath(episode.still_path, 'original')}
 					width={300}
 					className="h-full w-full rounded-md object-cover"
 					height={169}

@@ -3,10 +3,9 @@ import { UserAuth } from '@/app/context/AuthContext';
 import useAddToWatchlist from '@/app/lib/firebase/addToWatchlist';
 import useAddToContinueWatching from '@/app/lib/firebase/addToContinueWatching';
 import Loading from '@/app/loading';
-import Details from '@/app/components/Details';
+import Details from '@/app/components/Details/Details';
 import EpisodeSlider from '@/app/components/EpisodeSlider';
-import options from '@/app/lib/options';
-import { Episode, MovieDetails, ShowDetails } from '@/types';
+import { MovieDetails, ShowDetails, recommendationProps } from '@/types';
 import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, useDisclosure } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -22,16 +21,31 @@ import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { ModalManager } from '@/app/lib/ModalManager';
 import { format } from 'date-fns';
 import { fetchDMCA } from '@/app/lib/fetchDMCA';
+import Player from './Player/Player';
 
-const Main = ({ params }: { params: { type: string; id: number } }) => {
+export interface DetailsData {
+	recommendations: { results: recommendationProps[] };
+	credits: any;
+	keywords: any;
+	videos: any;
+	reviews: any;
+	external: any;
+}
+interface MainProps {
+	params: { type: string; id: number };
+	sources: any;
+	result: MovieDetails | ShowDetails | null;
+	sections: DetailsData;
+}
+
+const Main = ({ params, sources, result, sections }: MainProps) => {
 	const { id, type } = params;
-	const [result, setResult] = useState<MovieDetails | ShowDetails | null>(null);
 	const [season, setSeason] = useState<number>(0);
 	const [episode, setEpisode] = useState<number>(1);
 	const [source, setSource] = useState<number>(0);
 	const [isInWatchlist, setIsInWatchlist] = useState<boolean>(false);
 	const { user, googleSignIn } = UserAuth();
-	const [isLoading, setIsLoading] = useState<boolean>(true);
+	// const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [isInFuture, setIsInFuture] = useState<boolean>(false);
 	const [isinDMCA, setIsInDMCA] = useState<boolean>(false);
 
@@ -134,81 +148,24 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 	}, [value, user, result]);
 
 	useEffect(() => {
-		if (type === 'movie') {
-			fetch(`https://api.themoviedb.org/3/${type}/${id}?language=en-US`, options)
-				.then((res) => res.json())
-				.then((data) => {
-					fetch(`https://api.themoviedb.org/3/${type}/${id}/release_dates?language=en-US`, options)
-						.then((res2) => res2.json())
-						.then((data2) => {
-							const countries = ['US', 'CA', 'GB', 'AU', 'NZ', 'IE', 'IN', 'ZA'];
-							let content_rating = '';
-							for (let i = 0; i < data2.results.length; i++) {
-								if (countries.includes(data2.results[i].iso_3166_1)) {
-									content_rating = data2.results[i].release_dates[0].certification;
-									break;
-								}
-							}
-							data.content_rating = content_rating;
-							// media_type is used for the Details component
-							data.media_type = 'movie';
-							setResult(data);
-							setIsLoading(false);
-						});
-				});
-		} else if (type === 'tv') {
-			fetch(`https://api.themoviedb.org/3/${type}/${id}?language=en-US`, options)
-				.then((res) => res.json())
-				.then((data) => {
-					fetch(`https://api.themoviedb.org/3/tv/${id}/content_ratings?language=en-US`, options)
-						.then((res2) => res2.json())
-						.then((data2) => {
-							let content_rating = '';
-							for (let i = 0; i < data2.results.length; i++) {
-								if (data2.results[i].iso_3166_1 === 'US') {
-									content_rating = data2.results[i].rating;
-									break;
-								}
-							}
-							data.content_rating = content_rating;
-							// media_type is used for the Details component
-							data.media_type = 'tv';
+		if (type === 'tv') {
+			// from the tracker data that fetch tracker returns, check if there's a tracker for the current id, if not, check if the first season's name is Specials, if it is, setSeason to 1, else setSeason to 0
+			// if there is a tracker for the current id, setSeason to the season number and setEpisode to the episode number
+			if (result.seasons[0].name === 'Specials') {
+				setSeason(1);
+			} else {
+				setSeason(0);
+			}
 
-							const fetchSeasonData = async (season: { season_number: number }) => {
-								// console.log("fetching season data..." + season.season_number);
-								const seasonData = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/${season.season_number}`, options);
-								const seasonDataJson = await seasonData.json();
-								// console.log("season data fetched!");
-								// console.log(seasonDataJson);
-								return seasonDataJson;
-							};
+			if (!value) return;
+			if (!value.tracker) return;
+			if (!value.tracker[id]) return;
 
-							Promise.all(data.seasons.map(fetchSeasonData)).then((tempContent: Episode[][]) => {
-								console.log(tempContent);
-								data.seasons = tempContent;
-								setResult(data);
-								setIsLoading(false);
-							});
-
-							// from the tracker data that fetch tracker returns, check if there's a tracker for the current id, if not, check if the first season's name is Specials, if it is, setSeason to 1, else setSeason to 0
-							// if there is a tracker for the current id, setSeason to the season number and setEpisode to the episode number
-							if (data.seasons[0].name === 'Specials') {
-								setSeason(1);
-							} else {
-								setSeason(0);
-							}
-
-							if (!value) return;
-							if (!value.tracker) return;
-							if (!value.tracker[id]) return;
-
-							console.log('setting season and episode');
-							console.log(value);
-							console.log(value.tracker[id].episodeNumber, value.tracker[id].seasonNumber);
-							setEpisode(value.tracker[id].episodeNumber);
-							setSeason(value.tracker[id].seasonNumber);
-						});
-				});
+			console.log('setting season and episode');
+			console.log(value);
+			console.log(value.tracker[id].episodeNumber, value.tracker[id].seasonNumber);
+			setEpisode(value.tracker[id].episodeNumber);
+			setSeason(value.tracker[id].seasonNumber);
 		}
 	}, [user, value]);
 
@@ -225,31 +182,27 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 		}
 	};
 
-	const setLoading = (state: boolean) => {
-		setIsLoading(state);
-	};
-
 	if (isInFuture || isinDMCA) {
 		return (
-			<div className="min-h-screen w-full overflow-hidden bg-background text-foreground dark fc">
+			<div className="fc min-h-screen w-full overflow-hidden bg-background text-foreground dark">
 				{result && (
-					<div className="relative h-full w-full fc">
+					<div className="fc relative h-full w-full">
 						<Image
 							src={`https://image.tmdb.org/t/p/original${result?.backdrop_path}`}
 							alt="backdrop"
 							width={1920}
 							height={1080}
-							className="h-screen w-full object-cover object-center absolute"
+							className="absolute h-screen w-full object-cover object-center"
 						/>
-						<div className="fc absolute bg-background/50 backdrop-blur-2xl border border-foreground/30 p-5 rounded-2xl">
+						<div className="fc absolute rounded-2xl border border-foreground/30 bg-background/50 p-5 backdrop-blur-2xl">
 							{isInFuture && (
 								<>
-									<h3 className="text-2xl font-bold text-center">
+									<h3 className="text-center text-2xl font-bold">
 										{result && 'title' in result && result.title ? result.title : 'name' in result ? result.name : ''} has not
 										been released yet
 									</h3>
 									{'release_date' in result && result.release_date ? (
-										<h4 className="text-lg text-center">
+										<h4 className="text-center text-lg">
 											{/* May 5, 2024 format with date-fns */}
 											Set to release on {format(new Date(result.release_date), 'MMMM d, yyyy')}
 										</h4>
@@ -257,7 +210,7 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 								</>
 							)}
 							{isinDMCA && (
-								<h3 className="text-2xl font-bold text-center">
+								<h3 className="text-center text-2xl font-bold">
 									{result && 'title' in result && result.title ? result.title : 'name' in result ? result.name : ''} has been
 									removed due to DMCA
 								</h3>
@@ -272,10 +225,9 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 	return (
 		<>
 			<div className="min-h-screen w-full overflow-hidden bg-background text-foreground dark">
-				{(isLoading || loading) && <Loading />}
 				<ModalManager isOpen={adb.isOpen} onClose={adb.onClose} onOpenChange={adb.onOpenChange} type="adBlock" />
 				{result && <ModalManager isOpen={isOpen} onClose={onOpen} onOpenChange={onOpenChange} type="watchlist" data={{ googleSignIn }} />}
-				<div className="w-full overflow-hidden sm:pl-28 md:pl-36 pt-16 sm:pt-8">
+				<div className="w-full overflow-hidden pt-16 sm:pl-28 sm:pt-8 md:pl-36">
 					{type === 'movie' && result && 'title' in result ? (
 						<>
 							<div className="relative z-10 h-full w-full sm:px-5">
@@ -296,11 +248,7 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 									</motion.div>
 								)}
 								<div className="fc z-10 aspect-video w-full sm:rounded-2xl">
-									<iframe
-										allowFullScreen={true}
-										className="z-10 aspect-video w-full sm:rounded-2xl"
-										src={sourceCollectionMovie[source]}
-									/>
+									<Player url={sourceCollectionMovie[source]} result={result} sources={sources} />
 									<div className="fr w-full flex-wrap gap-3 pt-2 sm:items-end">
 										<Button size="sm" onClick={handleClick}>
 											{isInWatchlist ? (
@@ -329,7 +277,7 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 								</div>
 								<div className="relative w-full"></div>
 							</div>
-							<Details result={result} setIsLoading={setLoading} />
+							<Details result={result} sections={sections} />
 						</>
 					) : type === 'tv' && result && 'seasons' in result ? (
 						<>
@@ -352,11 +300,7 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 								)}
 								<div className="fc z-10 aspect-video w-full bg-background sm:rounded-2xl">
 									{sourceCollectionTV ? (
-										<iframe
-											allowFullScreen={true}
-											className="z-10 aspect-video w-full sm:rounded-2xl"
-											src={sourceCollectionTV[source]}
-										/>
+										<Player url={sourceCollectionTV[source]} result={result} sources={sources} />
 									) : (
 										<div className="z-10 aspect-video w-full sm:rounded-2xl">Loading</div>
 									)}
@@ -434,7 +378,7 @@ const Main = ({ params }: { params: { type: string; id: number } }) => {
 									/>
 								</div>
 							</div>
-							<Details result={result} setIsLoading={setLoading} />
+							<Details result={result} />
 						</>
 					) : null}
 				</div>

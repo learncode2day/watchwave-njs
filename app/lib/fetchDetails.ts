@@ -41,7 +41,7 @@ export default async function fetchDetails(id: number, media_type: string) {
 	} else {
 		const res2 = await fetch(`https://api.themoviedb.org/3/tv/${id}/content_ratings`, options);
 		const data2 = await res2.json();
-		console.log(data2);
+		// console.log(data2);
 
 		const countries = ['US', 'CA', 'GB', 'AU', 'NZ', 'IE', 'IN', 'ZA', 'BR'];
 

@@ -14,8 +14,8 @@ import getDocData from '@/app/lib/firebase/getDocData';
 import { UserAuth } from '@/app/context/AuthContext';
 import useAddToContinueWatching from '@/app/lib/firebase/addToContinueWatching';
 import Link from 'next/link';
-import { ModalManager } from '../lib/ModalManager';
 import { format } from 'date-fns';
+import { toast } from 'sonner';
 
 const ContentCard = ({ content, isDragging, removeFromCW }: Props) => {
 	const { user } = UserAuth();
@@ -46,7 +46,7 @@ const ContentCard = ({ content, isDragging, removeFromCW }: Props) => {
 	}, [data, user]);
 
 	const handleWatchlistClick = () => {
-		if (!user) onOpen();
+		if (!user) toast('Please sign in to add to watchlist');
 		if (isInWatchlist) {
 			remove();
 		} else {
@@ -60,7 +60,7 @@ const ContentCard = ({ content, isDragging, removeFromCW }: Props) => {
 	};
 
 	const handleRemoveFromCW = () => {
-		if (!user) onOpen();
+		if (!user) toast('Please sign in to remove from Continue Watching');
 		cw.remove();
 		getDocData(user)
 			.then((res) => {
@@ -69,10 +69,8 @@ const ContentCard = ({ content, isDragging, removeFromCW }: Props) => {
 			.catch((err) => console.log(err));
 	};
 
-	const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure();
 	return (
 		<div className={`aspect-[2/3] w-full max-w-[250px] ${isDragging ? 'cursor-grabbing' : 'cursor-pointer'}`}>
-			<ModalManager onClose={onClose} isOpen={isOpen} onOpenChange={onOpenChange} type="watchlist" />
 			<div className="group relative h-full w-full">
 				{content.poster_path ? (
 					<>

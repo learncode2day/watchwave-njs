@@ -1,28 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { cloneElement, useEffect, useRef, useState } from "react";
 
 import Image from "next/image";
 import { MovieDetails, ShowDetails, fetchResults } from "../types";
-import { Button, useDisclosure } from "@nextui-org/react";
 
-import { IoAdd, IoCheckmark, IoPlay, IoStar } from "react-icons/io5";
+import { IoStar } from "react-icons/io5";
 
 import Slider from "@/app/components/Slider";
 import Footer from "@/app/components/Footer";
 import { Animation } from "./Animation";
-import { useRouter } from "next/navigation";
 import { UserAuth } from "./context/AuthContext";
 import useAddToWatchlist from "./lib/firebase/addToWatchlist";
 import getDocData from "./lib/firebase/getDocData";
-import fetchDetails from "@/app/lib/fetchDetails";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "./lib/firebase/firebase";
-import { ModalManager } from "./lib/ModalManager";
 import { format } from "date-fns";
 
+import WatchlistButton from "./components/WatchlistButton";
+import PlayButton from "./components/PlayButton";
+import { fetchContentDataFromCW, getImagePath } from "./lib/tmdb";
 import Link from "next/link";
-
 
 interface Props {
   movie: MovieDetails & ShowDetails;
@@ -30,14 +28,12 @@ interface Props {
 }
 
 const Showcase = ({ movie, collection }: Props) => {
-  const imageURL = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
-  console.log(movie.logo);
-  const router = useRouter();
+  const imageURL = getImagePath(movie.backdrop_path, "original");
+
   const { user } = UserAuth();
   const [isInWatchlist, setIsInWatchlist] = useState(false);
   const [data, setData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure();
   const { add, remove } = useAddToWatchlist("movie", movie.id);
   const [cW, setCW] = useState<{
     heading: string;
@@ -55,7 +51,7 @@ const Showcase = ({ movie, collection }: Props) => {
       ),
       release_date: new Date(movie.release_date).getFullYear(),
       content_rating: movie.content_rating && (
-        <li className="border-1 whitespace-nowrap rounded-lg border-[#a1a1a1] px-1.5">
+        <li className="whitespace-nowrap rounded-lg border-1 border-[#a1a1a1] px-1.5">
           {movie.content_rating}
         </li>
       ),
@@ -86,7 +82,8 @@ const Showcase = ({ movie, collection }: Props) => {
     // in between, add a bullet point wrapped in a <li>
     let detailsArray = Object.values(details).map((detail, i) => {
       // if the value is already an <li>, return it
-      if (typeof detail === "object") return detail;
+      if (typeof detail === "object")
+        return cloneElement(detail, { key: `detail-${movie.id}-${i}` });
       // otherwise, create a new <li> and return it
       return (
         <li className="whitespace-nowrap" key={i}>
@@ -101,7 +98,6 @@ const Showcase = ({ movie, collection }: Props) => {
         // if it's the last item, don't add a bullet point
         if (i === detailsArray.length - 1) return [...acc, li];
         // otherwise, add a bullet point and the <li>
-        console.log([...acc, li, <li key={`bullet-${i}`}>•</li>]);
         return [...acc, li, <li key={`bullet-${i}`}>•</li>];
       },
       [] as React.ReactElement[],
@@ -138,7 +134,6 @@ const Showcase = ({ movie, collection }: Props) => {
   };
 
   useEffect(() => {
-    console.log(user);
     if (!user) return;
     logUser();
   }, [user]);
@@ -158,22 +153,8 @@ const Showcase = ({ movie, collection }: Props) => {
           // access continueWatching array
           const continueWatchingData = docSnap.data().continueWatching;
           if (!continueWatchingData) return;
-          console.log("continueWatchingData", continueWatchingData);
           // map through the array and fetch the details of each item
-          const promises = continueWatchingData.map(async (item) => {
-            const res = await fetchDetails(item.id, item.type);
-            return res;
-          });
-          // await all promises
-          const results = await Promise.all(promises);
-          console.log("results", results);
-
-          continueWatching = results.map((item, i) => {
-            return {
-              ...item,
-              ...results[i],
-            };
-          });
+          continueWatching = await fetchContentDataFromCW(continueWatchingData);
         }
       }
       // set continue watching collection
@@ -230,16 +211,11 @@ const Showcase = ({ movie, collection }: Props) => {
   return (
     <>
       {isLoading && <Animation />}
+
       {/* <iframe className="w-screen h-screen" src="https://d.daddylivehd.sx/embed/stream-1.php">
 				Your Browser Do not Support Iframe
 			</iframe> */}
-      <ModalManager
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        onClose={onClose}
-        type="watchlist"
-      />
-      <main className="light min-h-screen w-full overflow-hidden bg-black">
+      <main className="min-h-screen w-full overflow-hidden bg-black light">
         <div className="fc w-screen justify-start">
           <motion.div
             initial={{ opacity: 0 }}
@@ -270,15 +246,15 @@ const Showcase = ({ movie, collection }: Props) => {
           </motion.div>
           <div className="fc mb-10 h-full w-full items-start justify-start">
             <div className="fc z-10 w-full items-start justify-start pt-80 sm:px-0 sm:pl-36">
-              <div className="fc items-start justify-start px-5 pr-10">
+              <div className="fc w-full items-start justify-start px-5 pr-10">
                 {movie.logo ? (
-                  <div className="w-full px-3 lg:w-1/3">
+                  <div className="w-full max-w-[calc(50%)] px-3">
                     <Image
                       src={movie.logo}
                       alt="movie logo"
                       width={300}
                       height={200}
-                      className="mb-5 w-full lg:w-auto"
+                      className="mb-5 max-h-[300px] w-full"
                     />
                   </div>
                 ) : (
@@ -294,57 +270,20 @@ const Showcase = ({ movie, collection }: Props) => {
                 <ul className="showcase_detail fr gap-3 font-medium text-white/80 sm:text-lg md:mt-1">
                   {generateDetails()}
                 </ul>
-								<p className="mt-4 max-w-[50ch] text-base font-medium leading-normal text-white/80">{movie.overview}</p>
-								<div className="fr mt-4 gap-3">
-									<Link href={`/watch/${movie.media_type}/${movie.id}`}>
-										<Button size="lg" radius="sm" className="group h-11 font-semibold">
-											<IoPlay
-												size={20}
-												className="text-sm transition-transform duration-500 group-hover:scale-110 sm:text-base"
-											/>
-											Play
-										</Button>
-									</Link>
-									<Button
-										size="lg"
-										radius="sm"
-										className="group h-11 text-sm font-semibold text-white hover:text-black sm:text-base"
-										variant="ghost"
-										onClick={() => {
-											if (user) {
-												if (isInWatchlist) {
-													remove();
-												} else {
-													add();
-												}
-												getDocData(user)
-													.then((res) => {
-														setData(res);
-													})
-													.catch((err) => console.log(err));
-											} else {
-												onOpen();
-											}
-										}}
-									>
-										{!isInWatchlist ? (
-											<>
-												<IoAdd
-													className="transition-transform duration-500 group-hover:rotate-90 group-hover:scale-110"
-													size={20}
-												/>
-												Add to Watchlist
-											</>
-										) : (
-											<>
-												<IoCheckmark size={20} />
-												Added to Watchlist
-											</>
-										)}
-									</Button>
-								</div>
-							</div>
-
+                <p className="mt-4 max-w-[50ch] text-base font-medium leading-normal text-white/80">
+                  {movie.overview}
+                </p>
+                <div className="fr mt-4 gap-3">
+                  <Link href={`/watch/${movie.media_type}/${movie.id}`}>
+                    <PlayButton />
+                  </Link>
+                  <WatchlistButton
+                    isInWatchlist={isInWatchlist}
+                    content={movie}
+                    setData={setData}
+                  />
+                </div>
+              </div>
 
               <div className="fc mt-10 w-full gap-10">
                 {cW && cW.collection.length > 0 && (

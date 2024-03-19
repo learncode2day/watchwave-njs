@@ -24,6 +24,7 @@ interface Props {
 import 'swiper/css/free-mode';
 import { IoArrowBack, IoArrowForward } from 'react-icons/io5';
 import NewCard from './NewCard';
+import { fetchContentDataFromCW } from '../lib/tmdb';
 
 const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) => {
 	const prev = useRef<HTMLButtonElement>(null);
@@ -45,18 +46,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 			let tempCollection: Array<ShowDetails | MovieDetails> = [];
 
 			// map through the array and fetch the details of each item
-			const promises = value.continueWatching.map(async (item: { type: 'movie' | 'tv'; id: number }) => {
-				console.log(item);
-				const res = await fetchDetails(item.id, item.type);
-				return res;
-			});
-			// await all promises
-			const results = await Promise.all(promises);
-
-			results.map((item, i) => {
-				tempCollection.push(item);
-			});
-			console.log(tempCollection);
+			tempCollection = await fetchContentDataFromCW(value.continueWatching);
 			setCwCollection(tempCollection);
 		};
 		getCW();

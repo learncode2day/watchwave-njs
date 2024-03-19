@@ -1,4 +1,4 @@
-import { useContext, createContext, useState, useEffect, ReactNode } from 'react';
+import { useContext, createContext, useState, useEffect, ReactNode, useMemo } from 'react';
 import { User } from 'firebase/auth';
 import { signInWithPopup, signOut, onAuthStateChanged, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from '../lib/firebase/firebase';
@@ -33,8 +33,9 @@ export const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
 		});
 		return () => unsubscribe();
 	}, []);
+	const value = useMemo(() => ({ user, googleSignIn, logOut }), [user, googleSignIn, logOut]);
 
-	return <AuthContext.Provider value={{ user, googleSignIn, logOut }}>{children}</AuthContext.Provider>;
+	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const UserAuth = () => {

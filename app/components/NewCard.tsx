@@ -11,18 +11,19 @@ import {
   PopoverContent,
   PopoverTrigger,
   Tooltip,
-  useDisclosure,
 } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoAdd, IoCheckmark, IoClose, IoImage, IoList } from "react-icons/io5";
 import useAddToContinueWatching from "../lib/firebase/addToContinueWatching";
 import useAddToWatchlist from "../lib/firebase/addToWatchlist";
 import getDocData from "../lib/firebase/getDocData";
 import { UserAuth } from "../context/AuthContext";
-import { ModalManager } from "../lib/ModalManager";
 import { format } from "date-fns";
+import { toast } from "sonner";
+import { getImagePath } from "../lib/tmdb";
+import { CardDetails } from "./CardDetails";
 
 interface Props {
   content: Show | Movie | MovieDetails | ShowDetails | recommendationProps;
@@ -60,7 +61,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 
   const handleWatchlistClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    if (!user) onOpen();
+    if (!user) toast("Please sign in to add to watchlist");
     if (isInWatchlist) {
       remove();
     } else {
@@ -75,7 +76,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 
   const handleRemoveFromCW = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    if (!user) onOpen();
+    if (!user) toast("Please sign in to remove from Continue Watching");
     cw.remove();
     getDocData(user)
       .then((res) => {
@@ -83,8 +84,6 @@ const NewCard = ({ content, removeFromCW }: Props) => {
       })
       .catch((err) => console.log(err));
   };
-
-  const { isOpen, onOpenChange, onOpen, onClose } = useDisclosure();
 
   const mouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     // create glow on hover
@@ -97,12 +96,6 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 
   return (
     <>
-      <ModalManager
-        onClose={onClose}
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        type="watchlist"
-      />
       <Popover
         isOpen={popover}
         onClick={() => setPopover(false)}
@@ -123,13 +116,15 @@ const NewCard = ({ content, removeFromCW }: Props) => {
         <PopoverContent>
           {() => (
             <div className="max-w-[300px] px-1 py-2">
-              <Image
-                src={`https://image.tmdb.org/t/p/w500${content.backdrop_path}`}
-                alt={"title" in content ? content.title : content.name}
-                width={300}
-                height={450}
-                className="mb-3 aspect-video h-full w-full rounded-2xl"
-              />
+              {content.backdrop_path && (
+                <Image
+                  src={getImagePath(content.backdrop_path, "w500")}
+                  alt={"title" in content ? content.title : content.name}
+                  width={300}
+                  height={450}
+                  className="mb-3 aspect-video h-full w-full rounded-2xl"
+                />
+              )}
 
               <h3 className="font-bold">
                 {"title" in content ? content.title : content.name} •{" "}
@@ -140,10 +135,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
                     ? content.first_air_date.split("-")[0]
                     : "N/A"}
                 {"runtime" in content
-                  ? ` • ${format(
-                      new Date(0, 0, 0, 0, content.runtime),
-                      "h 'hr' m 'min'",
-                    )}`
+                  ? ` • ${format(new Date(0, 0, 0, 0, content.runtime), "h 'hr' m 'min'")}`
                   : "number_of_episodes" in content
                     ? `• ${content.number_of_episodes} episodes • ${content.number_of_seasons} seasons`
                     : ""}
@@ -153,16 +145,17 @@ const NewCard = ({ content, removeFromCW }: Props) => {
           )}
         </PopoverContent>
       </Popover>
+
       <div
         onMouseMove={mouseMove}
-        className="fc no-pointer:hidden group relative w-full max-w-[202px] cursor-pointer overflow-hidden rounded-2xl p-px"
+        className="fc group relative w-full max-w-[202px] cursor-pointer overflow-hidden rounded-2xl p-px no-pointer:hidden"
       >
         {/* desktop with pointer */}
         <div
           ref={cardRef}
           className="glow absolute inset-0 h-full w-full rounded-2xl opacity-0 transition-opacity group-hover:opacity-100"
         ></div>
-        <div className="group-hover:bg-foreground-800/90 transition-background h-full w-full max-w-[200px] rounded-2xl bg-transparent backdrop-blur-2xl">
+        <div className="h-full w-full max-w-[200px] rounded-2xl bg-transparent backdrop-blur-2xl transition-background group-hover:bg-foreground-800/90">
           <div className="fc h-full w-full gap-2 p-2">
             <div className="fc w-full items-start gap-1">
               <Link
@@ -171,14 +164,14 @@ const NewCard = ({ content, removeFromCW }: Props) => {
               >
                 {content.poster_path ? (
                   <Image
-                    src={`https://image.tmdb.org/t/p/w300${content.poster_path}`}
+                    src={getImagePath(content.poster_path, "w300")}
                     alt={"title" in content ? content.title : content.name}
                     width={300}
                     height={450}
                     className="mb-3 aspect-[2/3] h-full w-full rounded-2xl"
                   />
                 ) : (
-                  <div className="bg-foreground-800 fc relative mb-3 aspect-[2/3] rounded-2xl text-2xl">
+                  <div className="fc relative mb-3 aspect-[2/3] rounded-2xl bg-foreground-800 text-2xl">
                     <Image
                       src="/dummy_300x450.png"
                       alt="No Poster"
@@ -192,7 +185,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
                 <h4 className="text-sm font-bold text-white">
                   {"title" in content ? content.title : content.name}
                 </h4>
-                <div className="fr text-foreground-500 justify-start gap-1 text-xs">
+                <div className="fr justify-start gap-1 text-xs text-foreground-500">
                   <p>{content.media_type === "movie" ? "Movie" : "TV"}</p>
                   <p>•</p>
                   <p>
@@ -234,9 +227,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
                     radius="full"
                     variant="ghost"
                     size="sm"
-                    className={`text-white hover:text-black ${
-                      !isInWatchlist ? "hover:rotate-90" : "hover:rotate-0"
-                    }`}
+                    className={`text-white hover:text-black ${!isInWatchlist ? "hover:rotate-90" : "hover:rotate-0"}`}
                     aria-label="add to watchlist"
                     onClick={handleWatchlistClick}
                   >
@@ -267,21 +258,21 @@ const NewCard = ({ content, removeFromCW }: Props) => {
       </div>
 
       {/* mobile with no pointer */}
-      <div className="pointer:hidden group">
-        <div className="transition-background h-full w-full  max-w-[200px] rounded-2xl bg-transparent backdrop-blur-2xl">
+      <div className="group pointer:hidden">
+        <div className="h-full w-full max-w-[200px]  rounded-2xl bg-transparent backdrop-blur-2xl transition-background">
           <div className="fc h-full w-full gap-2 p-2">
             <div className="fc w-full items-start gap-1">
               <Link href={`/watch/${content.media_type}/${content.id}`}>
                 {content.poster_path ? (
                   <Image
-                    src={`https://image.tmdb.org/t/p/w300${content.poster_path}`}
+                    src={getImagePath(content.poster_path, "w300")}
                     alt={"title" in content ? content.title : content.name}
                     width={300}
                     height={450}
                     className="mb-3 aspect-[2/3] h-full w-full rounded-2xl"
                   />
                 ) : (
-                  <div className="bg-foreground-800 fc relative mb-3 aspect-[2/3] rounded-2xl text-2xl">
+                  <div className="fc relative mb-3 aspect-[2/3] rounded-2xl bg-foreground-800 text-2xl">
                     <Image
                       src="/dummy_300x450.png"
                       alt="No Poster"
@@ -295,7 +286,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
                 <h4 className="text-sm font-bold text-white">
                   {"title" in content ? content.title : content.name}
                 </h4>
-                <div className="fr text-foreground-500 justify-start gap-1 text-xs">
+                <div className="fr justify-start gap-1 text-xs text-foreground-500">
                   <p>{content.media_type === "movie" ? "Movie" : "TV"}</p>
                   <p>•</p>
                   <p>
