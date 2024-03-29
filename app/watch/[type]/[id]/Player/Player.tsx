@@ -693,7 +693,7 @@ const Player: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="fr z-10 w-full justify-start bg-gradient-to-b from-black to-transparent px-5 py-3"
+                  className="fr z-10 w-full justify-start bg-gradient-to-b from-black/90 to-transparent px-5 py-3 pb-6"
                 >
                   <div className="fr gap-2 text-xl">
                     <button
@@ -727,7 +727,7 @@ const Player: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
                   transition={{ duration: 0.2 }}
-                  className="fc z-10 w-full gap-3 bg-gradient-to-b from-transparent to-black px-5 py-3"
+                  className="fc z-10 w-full gap-3 bg-gradient-to-b from-transparent to-black/90 px-5 py-3 pt-6"
                 >
                   {/* seek bar */}
                   <Seek seekTo={seekTo} setIsInteracting={setIsInteracting} />

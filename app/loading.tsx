@@ -104,7 +104,7 @@ const Loading = () => {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="font-articulat inline-flex min-h-[80px] flex-wrap overflow-hidden text-2xl tracking-tighter text-white"
+        className="font-articulat inline-flex justify-center items-center min-h-[80px] flex-wrap overflow-hidden text-2xl tracking-tighter text-white"
       >
         {/* {prevMessage.length !== 0 &&
 						prevMessage.split('').map((letter, index) => (
