@@ -1,0 +1,2708 @@
+{
+    "total_pages": 5,
+    "total_count": 255,
+    "per_page": 60,
+    "page": 1,
+    "data": [
+      {
+        "id": "6109582",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109582",
+          "language": "en",
+          "download_count": 1029666,
+          "new_download_count": 22007,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T01:50:33Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.X264.AC3-EVO",
+          "comments": "HI Removed | Full retail subtitles (ENGLiSH + FOREiGN parts), not a mix of a transcript with mistakes, missing lines and errors and a translation from another language | Works with all HDRip versions that run for 02:28:56 | Not to be used by RARBG & TurkceAltyazi thieves =) -- Please don't reupload on OpenSubtitles and give credit where it's due. Thanks!",
+          "legacy_subtitle_id": 8849760,
+          "legacy_uploader_id": 5634869,
+          "uploader": {
+            "uploader_id": 117966,
+            "name": "explosiveskull",
+            "rank": "Subtitle Translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8849760",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7054999,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109414",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109414",
+          "language": "en",
+          "download_count": 448153,
+          "new_download_count": 18528,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T00:03:06Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO",
+          "comments": "HI Removed | Official subtitles, not a transcript with mistakes, missing lines and errors | Works with all HDRip/WEBRip/WEB-DL versions that run for 02:35:24 | Not to be used by RARBG & TurkceAltyazi thieves =) -- Please don't reupload on OpenSubtitles and give credit where it's due. Thanks!",
+          "legacy_subtitle_id": 8849694,
+          "legacy_uploader_id": 5634869,
+          "uploader": {
+            "uploader_id": 117966,
+            "name": "explosiveskull",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8849694",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055092,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109415",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109415",
+          "language": "en",
+          "download_count": 199150,
+          "new_download_count": 4693,
+          "hearing_impaired": true,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T00:03:01Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO",
+          "comments": "HI | Official subtitles, not a transcript with mistakes, missing lines and errors | Works with all HDRip/WEBRip/WEB-DL versions that run for 02:35:24 | Not to be used by RARBG & TurkceAltyazi thieves =) -- Please don't reupload on OpenSubtitles and give credit where it's due. Thanks!",
+          "legacy_subtitle_id": 8849693,
+          "legacy_uploader_id": 5634869,
+          "uploader": {
+            "uploader_id": 117966,
+            "name": "explosiveskull",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8849693",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7054923,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109579",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109579",
+          "language": "en",
+          "download_count": 158486,
+          "new_download_count": 4455,
+          "hearing_impaired": true,
+          "hd": true,
+          "fps": 25,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T01:50:28Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.X264.AC3-EVO",
+          "comments": "HI | Full retail subtitles (ENGLiSH + FOREiGN parts), not a mix of a transcript with mistakes, missing lines and errors and a translation from another language | Works with all HDRip versions that run for 02:28:56 | Not to be used by RARBG & TurkceAltyazi thieves =) -- Please don't reupload on OpenSubtitles and give credit where it's due. Thanks!",
+          "legacy_subtitle_id": 8849759,
+          "legacy_uploader_id": 5634869,
+          "uploader": {
+            "uploader_id": 117966,
+            "name": "explosiveskull",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8849759",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7054996,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]-HI"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109580",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109580",
+          "language": "en",
+          "download_count": 112824,
+          "new_download_count": 19873,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": true,
+          "upload_date": "2021-10-22T01:50:38Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.X264.AC3-EVO",
+          "comments": "FOREiGN PARTS ONLY from retail source, not a translation from another language | Works with all HDRip versions that run for 02:28:56",
+          "legacy_subtitle_id": 8849761,
+          "legacy_uploader_id": 5634869,
+          "uploader": {
+            "uploader_id": 117966,
+            "name": "explosiveskull",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8849761",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7054998,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]-Forced"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109876",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109876",
+          "language": "ar",
+          "download_count": 81129,
+          "new_download_count": 1322,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T06:46:20Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.x264-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8849883,
+          "legacy_uploader_id": 6022220,
+          "uploader": {
+            "uploader_id": 81918,
+            "name": "ghostwalker",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/ar/subtitles/legacy/8849883",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/ar/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055209,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.x264-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6190493",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6190493",
+          "language": "en",
+          "download_count": 79038,
+          "new_download_count": 6403,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-12-03T21:22:05Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.BluRay.REMUX.AVC.Atmos-TRiToN",
+          "comments": "And:\r\n Dune.2021.BRRip.x264-ION10\r\nDune.2021.1080p.BluRay.REMUX.AVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT\r\nDune.2021.1080p.BluRay.AVC.TrueHD.7.1.Atmos-CYBER\r\nDune.2021.1080p.BluRay.x264.TrueHD.7.1.Atmos-FGT\r\nDune.2021.1080p.BluRay.x264.DTS-HD.MA.7.1-FGT\r\nDune.2021.1080p.BluRay.x264.DTS-FGT\r\nDune.2021.720p.BluRay.x264.DTS-FGT\r\nDune.2021.1080p.BluRay.H264.AAC-RARBG\r\nDune.2021.720p.BluRay.H264.AAC-RARBG\r\nDune.2021.720p.BRRip.XviD.AC3-XVID\r\nRemoved HI notations.",
+          "legacy_subtitle_id": 8897142,
+          "legacy_uploader_id": 0,
+          "uploader": {
+            "uploader_id": 3282,
+            "name": "os-auto",
+            "rank": "Application Developers"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8897142",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7116058,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.BluRay.REMUX.AVC.Atmos-TRiToN"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6099823",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6099823",
+          "language": "es",
+          "download_count": 40400,
+          "new_download_count": 2181,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T15:03:19Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune 2021 1080p HDRip X264 AC3-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8844478,
+          "legacy_uploader_id": 8566921,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/es/subtitles/legacy/8844478",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/es/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7047410,
+              "cd_number": 1,
+              "file_name": "Dune 2021 1080p HDRip X264 AC3-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6072269",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6072269",
+          "language": "ar",
+          "download_count": 39862,
+          "new_download_count": 344,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-02T20:22:08Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.HDCAM.850MB.c1nem4.x264-SUNSCREEN",
+          "comments": "",
+          "legacy_subtitle_id": 8826756,
+          "legacy_uploader_id": 6022220,
+          "uploader": {
+            "uploader_id": 81918,
+            "name": "ghostwalker",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/ar/subtitles/legacy/8826756",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/ar/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7024473,
+              "cd_number": 1,
+              "file_name": "Dune.2021.HDCAM.850MB.c1nem4.x264-SUNSCREEN"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6220438",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6220438",
+          "language": "en",
+          "download_count": 31525,
+          "new_download_count": 3226,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-12-18T23:52:45Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune Part One 2021 720p BluRay.DD5.1.x264-iFT",
+          "comments": "23.976 English+foreign parts © 18.12.2021",
+          "legacy_subtitle_id": 8914605,
+          "legacy_uploader_id": 0,
+          "uploader": {
+            "uploader_id": 3282,
+            "name": "os-auto",
+            "rank": "Application Developers"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8914605",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7137405,
+              "cd_number": 1,
+              "file_name": "Dune Part One 2021 720p BluRay.DD5.1.x264-iFT"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6190494",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6190494",
+          "language": "en",
+          "download_count": 31366,
+          "new_download_count": 1141,
+          "hearing_impaired": true,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-12-03T21:21:31Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.BluRay.REMUX.AVC.Atmos-TRiToN",
+          "comments": "And:\r\n Dune.2021.BRRip.x264-ION10\r\nDune.2021.1080p.BluRay.REMUX.AVC.DTS-HD.MA.TrueHD.7.1.Atmos-FGT\r\nDune.2021.1080p.BluRay.AVC.TrueHD.7.1.Atmos-CYBER\r\nDune.2021.1080p.BluRay.x264.TrueHD.7.1.Atmos-FGT\r\nDune.2021.1080p.BluRay.x264.DTS-HD.MA.7.1-FGT\r\nDune.2021.1080p.BluRay.x264.DTS-FGT\r\nDune.2021.720p.BluRay.x264.DTS-FGT\r\nDune.2021.1080p.BluRay.H264.AAC-RARBG\r\nDune.2021.720p.BluRay.H264.AAC-RARBG\r\nDune.2021.720p.BRRip.XviD.AC3-XVID",
+          "legacy_subtitle_id": 8897141,
+          "legacy_uploader_id": 0,
+          "uploader": {
+            "uploader_id": 3282,
+            "name": "os-auto",
+            "rank": "Application Developers"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8897141",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7116059,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.BluRay.REMUX.AVC.Atmos-TRiToN.English"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110424",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110424",
+          "language": "nl",
+          "download_count": 30810,
+          "new_download_count": 2043,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 0,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T12:42:54Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8850335,
+          "legacy_uploader_id": 7807343,
+          "uploader": {
+            "uploader_id": 227849,
+            "name": "ultimatezombies",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8850335",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055719,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6101194",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6101194",
+          "language": "pt-BR",
+          "download_count": 29404,
+          "new_download_count": 1394,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 3,
+          "ratings": 9,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T03:52:35Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "comments": "Releases:\r\nDune.2021.HDRip.XviD-EVO\r\nDune.2021.1080p.HDRip.X264.AC3-EVO\r\nDune.2021.720p.WEBRip.DD5.1.x264-SHITBOX\r\nDune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "legacy_subtitle_id": 8845178,
+          "legacy_uploader_id": 378614,
+          "uploader": {
+            "uploader_id": 40309,
+            "name": "clazevedo",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-BR/subtitles/legacy/8845178",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-BR/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7048365,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6102747",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6102747",
+          "language": "pt-PT",
+          "download_count": 28407,
+          "new_download_count": 772,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 6,
+          "ratings": 8.3,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T22:34:54Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "comments": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX\r\nDune.2021.720p.WEBRip.DD5.1.x264-SHITBOX\r\nDune.2021.1080p.HDRip.X264.AC3-EVO\r\nDune.2021.HDRip.XviD-EVO",
+          "legacy_subtitle_id": 8846371,
+          "legacy_uploader_id": 1631826,
+          "uploader": {
+            "uploader_id": 64982,
+            "name": "masousa",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-PT/subtitles/legacy/8846371",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-PT/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7049655,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6100504",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6100504",
+          "language": "fr",
+          "download_count": 28228,
+          "new_download_count": 1377,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 7,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T21:07:09Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.VOSTFR.FANSUB.1080p.HDRip.DD5.1",
+          "comments": "",
+          "legacy_subtitle_id": 8844959,
+          "legacy_uploader_id": 8267615,
+          "uploader": {
+            "uploader_id": 227636,
+            "name": "didesbois",
+            "rank": "Platinum Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/fr/subtitles/legacy/8844959",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/fr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7047999,
+              "cd_number": 1,
+              "file_name": "Dune.2021.VOSTFR.FANSUB.1080p.HDRip.DD5.1"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6100387",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6100387",
+          "language": "ar",
+          "download_count": 25983,
+          "new_download_count": 407,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T19:57:37Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.720p.HDRip.900MB.x264-GalaxyRG",
+          "comments": "",
+          "legacy_subtitle_id": 8844900,
+          "legacy_uploader_id": 6022220,
+          "uploader": {
+            "uploader_id": 81918,
+            "name": "ghostwalker",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/ar/subtitles/legacy/8844900",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/ar/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7047918,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HDRip.X264.AC3-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6101925",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6101925",
+          "language": "nl",
+          "download_count": 21223,
+          "new_download_count": 1082,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 1,
+          "ratings": 5,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T15:00:22Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.X264.AC3-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8845757,
+          "legacy_uploader_id": 6671197,
+          "uploader": {
+            "uploader_id": 118634,
+            "name": "nlsubber",
+            "rank": "Bronze Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8845757",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7048980,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.X264.AC3-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6189345",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6189345",
+          "language": "nl",
+          "download_count": 20109,
+          "new_download_count": 3065,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 0,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-12-03T18:00:14Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.Bluray.Atmos.TrueHD.7.1.x264-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8896790,
+          "legacy_uploader_id": 7807343,
+          "uploader": {
+            "uploader_id": 227849,
+            "name": "ultimatezombies",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8896790",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7115558,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.Bluray.Atmos.TrueHD.7.1.x264-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6117061",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6117061",
+          "language": "hr",
+          "download_count": 19164,
+          "new_download_count": 573,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-25T16:01:21Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.RETAiL.CROSubs.WEBRip.XviD-metalcamp",
+          "comments": "02:35:24\r\nDune.2021.1080p.WEB.H264-NAISU\r\nDune.2021.720p.WEB.H264-NAISU\r\nDune.2021.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-CM\r\nDune.2021.1080p.WEBRip.x264-RARBG\r\nDune.2021.1080p.WEBRip.x265-RARBG\r\nDune.2021.WEBRip.XviD.MP3-XVID\r\nDune.2021.720p.HMAX.WEBRip.AAC2.0.X.264-EVO\r\nDune.2021.1080p.HMAX.WEBRip.DD5.1.X.264-EVO\r\nDune.2021.1080p.HMAX.WEB-DL.DD5.1.x264-EVO",
+          "legacy_subtitle_id": 8853728,
+          "legacy_uploader_id": 6368780,
+          "uploader": {
+            "uploader_id": 83310,
+            "name": "blazcare89_",
+            "rank": "Administrator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/hr/subtitles/legacy/8853728",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/hr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7060701,
+              "cd_number": 1,
+              "file_name": "Dune.2021.RETAiL.CROSubs.WEBRip.XviD-metalcamp"
+            }
+          ]
+        }
+      },
+      {
+        "id": "7616059",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "7616059",
+          "language": "en",
+          "download_count": 17140,
+          "new_download_count": 1482,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2024-02-15T04:40:45Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune (2021) Bluray-1080p",
+          "comments": "",
+          "legacy_subtitle_id": 9895136,
+          "legacy_uploader_id": 8305299,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/9895136",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 8542608,
+              "cd_number": 1,
+              "file_name": "Dune (2021) Bluray-1080p.en"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6794835",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6794835",
+          "language": "en",
+          "download_count": 15506,
+          "new_download_count": 3930,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2022-11-12T09:07:00Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.BluRay.x264.TrueHD.7.1.Atmos-FGT",
+          "comments": "",
+          "legacy_subtitle_id": 9308438,
+          "legacy_uploader_id": 0,
+          "uploader": {
+            "uploader_id": 3282,
+            "name": "os-auto",
+            "rank": "Application Developers"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/9308438",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7764404,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.BluRay.x264.TrueHD.7.1.Atmos-FGT-eng"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110241",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110241",
+          "language": "tr",
+          "download_count": 15476,
+          "new_download_count": 1010,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T10:52:49Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.x265-MZABI",
+          "comments": "",
+          "legacy_subtitle_id": 8850220,
+          "legacy_uploader_id": 1361125,
+          "uploader": {
+            "uploader_id": 57547,
+            "name": "basmane",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune: Çöl Gezegeni",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/tr/subtitles/legacy/8850220",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/tr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055530,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.x265-MZABI.tr"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6111202",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6111202",
+          "language": "zh-CN",
+          "download_count": 15343,
+          "new_download_count": 1891,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 1,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T20:27:21Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CM",
+          "comments": "",
+          "legacy_subtitle_id": 8851081,
+          "legacy_uploader_id": 0,
+          "uploader": {
+            "uploader_id": 3282,
+            "name": "os-auto",
+            "rank": "Application Developers"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - 沙丘",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/zh-CN/subtitles/legacy/8851081",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/zh-CN/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7056413,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6086186",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6086186",
+          "language": "hr",
+          "download_count": 15111,
+          "new_download_count": 231,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-06T23:09:37Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "HDCAM.850MB.c1nem4.x264-SUNSCREEN[TGx] / HDCAM.X264-SONO / 1080p.HDCAM.SLOTSLIGHTS",
+          "comments": "Prevod odgovara za verzije koje traju 02h 28 min i 33 sec.",
+          "legacy_subtitle_id": 8831803,
+          "legacy_uploader_id": 7045246,
+          "uploader": {
+            "uploader_id": 227650,
+            "name": "remedyyy",
+            "rank": "Subtitle Translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/hr/subtitles/legacy/8831803",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/hr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7036189,
+              "cd_number": 1,
+              "file_name": "Dune.2021.HDCAM.850MB.c1nem4.x264-SUNSCREEN[TGx].hr"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109509",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109509",
+          "language": "pt-BR",
+          "download_count": 14509,
+          "new_download_count": 695,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T01:06:53Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-CMRG",
+          "comments": "Releases:\r\nDune.2021.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-CMRG\r\nDune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO\r\nDune.2021.1080p.WEBRip.DD5.1.x264-x265-Rapta\r\nDune.2021.1080p.WEBRip.DD5.1.x264-KOGI\r\nDune.2021.720p.WEB.H264-NAISU",
+          "legacy_subtitle_id": 8849714,
+          "legacy_uploader_id": 7719367,
+          "uploader": {
+            "uploader_id": 227647,
+            "name": "oelexis",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-BR/subtitles/legacy/8849714",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-BR/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7054940,
+              "cd_number": 1,
+              "file_name": "Dune.2021.[WEB-DL].1080p.HMAX"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6127312",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6127312",
+          "language": "ar",
+          "download_count": 13806,
+          "new_download_count": 847,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 2,
+          "ratings": 4.5,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-29T14:34:31Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]",
+          "comments": "| ترجمة : م . يوسف عثمان |\r\nsupport us on facebook :\r\nhttps://m.facebook.com/subtitle.engineer/",
+          "legacy_subtitle_id": 8858485,
+          "legacy_uploader_id": 8054211,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - كثيب",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/ar/subtitles/legacy/8858485",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/ar/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7068181,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109630",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109630",
+          "language": "es",
+          "download_count": 13369,
+          "new_download_count": 918,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T02:10:12Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune 2021 1080p HMAX WEB-DL Atmos x264-CMRG",
+          "comments": "Versión de TaMaBin. | FUnciona con todas las versiones WEB-DL y WEBRip de HBO Max/HMAX",
+          "legacy_subtitle_id": 8849771,
+          "legacy_uploader_id": 6326475,
+          "uploader": {
+            "uploader_id": 83160,
+            "name": "zagonsubs",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/es/subtitles/legacy/8849771",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/es/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055038,
+              "cd_number": 1,
+              "file_name": "Dune 2021 1080p HMAX WEB-DL Atmos x264-CMRG"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110719",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110719",
+          "language": "nl",
+          "download_count": 13305,
+          "new_download_count": 400,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T15:29:09Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune (2021) 1080p HDRip X264 AC3-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8850565,
+          "legacy_uploader_id": 80059,
+          "uploader": {
+            "uploader_id": 33816,
+            "name": "vidioot2000",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8850565",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055973,
+              "cd_number": 1,
+              "file_name": "Dune (2021) 1080p HDRip X264 AC3-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6103595",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6103595",
+          "language": "tr",
+          "download_count": 12818,
+          "new_download_count": 621,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 4,
+          "ratings": 7.8,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-19T09:45:58Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "EVO / GalaxyRG / KOGI / PSA / Rapta / RARBG / SHITBOX / [YTS.MX]",
+          "comments": "",
+          "legacy_subtitle_id": 8846610,
+          "legacy_uploader_id": 1361125,
+          "uploader": {
+            "uploader_id": 57547,
+            "name": "basmane",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/tr/subtitles/legacy/8846610",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/tr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7050171,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.DD5.1.x264-SHITBOX.TR"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6124109",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6124109",
+          "language": "pt-BR",
+          "download_count": 12761,
+          "new_download_count": 1763,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-28T05:39:53Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.x264.AAC5.1-[YTS.MX]",
+          "comments": "SINOPSE: Paul Atreides é um jovem brilhante, dono de um destino além de sua compreensão. Ele deve viajar para o planeta mais perigoso do universo para garantir o futuro de seu povo.",
+          "legacy_subtitle_id": 8856746,
+          "legacy_uploader_id": 4064995,
+          "uploader": {
+            "uploader_id": 75256,
+            "name": "benneh",
+            "rank": "Bronze Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-BR/subtitles/legacy/8856746",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-BR/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7066218,
+              "cd_number": 1,
+              "file_name": "Duna (2021) [1080p]_WEBRip_[por]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6101600",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6101600",
+          "language": "fr",
+          "download_count": 12075,
+          "new_download_count": 1482,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T11:27:04Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "comments": "TRUSTED",
+          "legacy_subtitle_id": 8845492,
+          "legacy_uploader_id": 9006668,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/fr/subtitles/legacy/8845492",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/fr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7048730,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX.fre"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6113260",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6113260",
+          "language": "nl",
+          "download_count": 11860,
+          "new_download_count": 1122,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-23T19:00:19Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CM",
+          "comments": "",
+          "legacy_subtitle_id": 8851848,
+          "legacy_uploader_id": 5562669,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8851848",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7057832,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109719",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109719",
+          "language": "es",
+          "download_count": 11578,
+          "new_download_count": 1006,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 0,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T03:30:53Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune 2021 - 2160p HMAX WEB-DL x265 10bit HDR DDP5.1 Atmos-CM",
+          "comments": "Original de HBO MAX, con varios arreglos masivos a todo el texto, pero ajustado ya para releases 4K, para \"2160p HMAX WEB-DL x265 10bit HDR DDP5.1 Atmos-CM\" y 2160p HMAX WEB-DL DDP5.1 Atmos HDR HEVC-CMRG =)",
+          "legacy_subtitle_id": 8849828,
+          "legacy_uploader_id": 4327037,
+          "uploader": {
+            "uploader_id": 76371,
+            "name": "cvegah_",
+            "rank": "Platinum Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/es/subtitles/legacy/8849828",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/es/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055101,
+              "cd_number": 1,
+              "file_name": "Dune 2021 - 2160p HMAX WEB-DL x265 10bit HDR DDP5"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6099966",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6099966",
+          "language": "es",
+          "download_count": 11539,
+          "new_download_count": 508,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T15:36:01Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.1600MB.DD5.1.x264-GalaxyRG",
+          "comments": "Extraído del disco que llega a mi país (AND) corregido y ajustado para WEB-DL y HDRIps.",
+          "legacy_subtitle_id": 8844572,
+          "legacy_uploader_id": 2330295,
+          "uploader": {
+            "uploader_id": 68511,
+            "name": "Sgarrifos",
+            "rank": "Platinum Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/es/subtitles/legacy/8844572",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/es/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7047521,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HDRip.1600MB.DD5.1.x264-GalaxyRG"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6189610",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6189610",
+          "language": "ar",
+          "download_count": 11473,
+          "new_download_count": 531,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-12-03T19:30:07Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.720p.BluRay.x264.DTS-FGT",
+          "comments": "",
+          "legacy_subtitle_id": 8896920,
+          "legacy_uploader_id": 6022220,
+          "uploader": {
+            "uploader_id": 81918,
+            "name": "ghostwalker",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/ar/subtitles/legacy/8896920",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/ar/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7123919,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.BluRay.x264.DTS-FGT"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109636",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109636",
+          "language": "es",
+          "download_count": 11195,
+          "new_download_count": 969,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": true,
+          "upload_date": "2021-10-22T02:35:38Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CM",
+          "comments": "Solo subtítulos forced\nReleases.\nDune.2021.720p.WEB.H264-NAISU\nDune.2021.1080p.WEB.H264-NAISU\nDune.2021.WEBRip.XviD.MP3-XVID \nDune.2021.1080p.WEBRip.x264-RARBG \nDune.2021.WEBRip.x264-ION10 \nDune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.DV.MP4.x265-DVSUX \nDune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.DV.MKV.x265-NAISU \nDune.2021.2160p.HMAX.WEB-DL.x265.10bit.HDR.DDP5.1.Atmos-CM \nDune.2021.1080p.HMAX.WEBRip.DDP5.1.Atmos.x264-CM",
+          "legacy_subtitle_id": 8849795,
+          "legacy_uploader_id": 7650378,
+          "uploader": {
+            "uploader_id": 216980,
+            "name": "oakislandtk",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/es/subtitles/legacy/8849795",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/es/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055043,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110662",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110662",
+          "language": "pt-PT",
+          "download_count": 11075,
+          "new_download_count": 260,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 2,
+          "ratings": 7.5,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T14:21:23Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-CMRG",
+          "comments": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-CMRG\r\nDune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO\r\nDune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H.264-FLUX\r\nDune.2021.HDR.2160p.WEB.H265-NAISU\r\nDune.2021.720p.HMAX.WEB-DL.DDP5.1.Atmos.x264-MZABI\r\nDune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-EVO\r\nDune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.x265-MZABI\r\nDune.2021.1080p.HDR.HMAX.WEB-DL.DDP5.1.Atmos.H265-EVO\r\nDune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CMRG",
+          "legacy_subtitle_id": 8850460,
+          "legacy_uploader_id": 1631826,
+          "uploader": {
+            "uploader_id": 64982,
+            "name": "masousa",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-PT/subtitles/legacy/8850460",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-PT/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055929,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6099314",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6099314",
+          "language": "en",
+          "download_count": 10882,
+          "new_download_count": 959,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T05:38:13Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Jungle.Cruise.2021.720p.BluRay.DD5.1.x264-iFT",
+          "comments": "",
+          "legacy_subtitle_id": 8844166,
+          "legacy_uploader_id": 5802383,
+          "uploader": {
+            "uploader_id": 54926,
+            "name": "toroncio_",
+            "rank": "Bronze Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/en/subtitles/legacy/8844166",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/en/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7076346,
+              "cd_number": 1,
+              "file_name": "Jungle.Cruise.2021.720p.BluRay.DD5.1.x264-iFT"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6141910",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6141910",
+          "language": "pt-PT",
+          "download_count": 10631,
+          "new_download_count": 374,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 2,
+          "ratings": 10,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-11-05T22:49:42Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H.264-FLUX",
+          "comments": "..:: Tradução ferneiva ::..\r\nRevisão e Tradução: HomemDasLegendas",
+          "legacy_subtitle_id": 8866903,
+          "legacy_uploader_id": 1631826,
+          "uploader": {
+            "uploader_id": 64982,
+            "name": "masousa",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pt-PT/subtitles/legacy/8866903",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pt-PT/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7080029,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.H"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6101385",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6101385",
+          "language": "pl",
+          "download_count": 10269,
+          "new_download_count": 831,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 3,
+          "ratings": 8.3,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T07:16:52Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.1600MB.DD5.1.x264-GalaxyRG",
+          "comments": "Dune.2021.1080p.HDRip.1600MB.DD5.1.x264-GalaxyRG\r\nDune.2021.720p.HDRip.900MB.x264-GalaxyRG\r\nDune.2021.HDRip.XviD-EVO\r\nDune.2021.1080p.HDRip.1600MB.DD5 1 x264-GalaxyRG\r\nDune.2021.1080p.HDRip.X264.AC3-EVO\r\nDune.2021.1080p.HDRip.X264-EVO\r\nPełne tłumaczenie (nie translator)",
+          "legacy_subtitle_id": 8845220,
+          "legacy_uploader_id": 9097463,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Diuna",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/pl/subtitles/legacy/8845220",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/pl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7048535,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HDRip.1600MB.DD5.1.x264-GalaxyRG"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6101832",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6101832",
+          "language": "sr",
+          "download_count": 9845,
+          "new_download_count": 275,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-18T14:05:30Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "comments": "",
+          "legacy_subtitle_id": 8845685,
+          "legacy_uploader_id": 7224922,
+          "uploader": {
+            "uploader_id": 227974,
+            "name": "bambula_",
+            "rank": "Subtitle Translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/sr/subtitles/legacy/8845685",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/sr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7048899,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6099792",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6099792",
+          "language": "sv",
+          "download_count": 9760,
+          "new_download_count": 661,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 0,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-17T13:05:26Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.X264-EVO",
+          "comments": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "legacy_subtitle_id": 8844391,
+          "legacy_uploader_id": 6499422,
+          "uploader": {
+            "uploader_id": 83676,
+            "name": "Nemo_",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/sv/subtitles/legacy/8844391",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/sv/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7047380,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HDRip.X264-EVO"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110663",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110663",
+          "language": null,
+          "download_count": 9302,
+          "new_download_count": 537,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T14:54:11Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CM",
+          "comments": "vs. 2h35'24'' fara diactrice",
+          "legacy_subtitle_id": 8850521,
+          "legacy_uploader_id": 1116095,
+          "uploader": {
+            "uploader_id": 53131,
+            "name": "bubuloimare",
+            "rank": "Administrator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com//subtitles/legacy/8850521",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com//movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055930,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6143415",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6143415",
+          "language": "nl",
+          "download_count": 9032,
+          "new_download_count": 897,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-11-06T22:37:37Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]",
+          "comments": "Synchronisatie voor 25fps versie.",
+          "legacy_subtitle_id": 8867922,
+          "legacy_uploader_id": 6663506,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/nl/subtitles/legacy/8867922",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/nl/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7081263,
+              "cd_number": 1,
+              "file_name": "Dune.2021.720p.WEBRip.x264.AAC-[YTS.MX]"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6136095",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6136095",
+          "language": "el",
+          "download_count": 8943,
+          "new_download_count": 940,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 25,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-11-02T20:14:01Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip.DD5.1.x264-SHITBOX",
+          "comments": "Αρκετές αλλα΄γες και διορθώσεις στην αρχική μετάφραση/απόδοση του Del7531.\r\n25 fps.",
+          "legacy_subtitle_id": 8863205,
+          "legacy_uploader_id": 6881246,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/el/subtitles/legacy/8863205",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/el/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7075117,
+              "cd_number": 1,
+              "file_name": "2021 Dune (1920x776 AC3).Greek"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6110422",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6110422",
+          "language": "hu",
+          "download_count": 8651,
+          "new_download_count": 290,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 1,
+          "ratings": 10,
+          "from_trusted": true,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T12:40:05Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "dune.2021.1080p.web.h264-naisu.hun",
+          "comments": "(WEBRip-ION10, WEBRip-XVID, WEB.720p-NAISU, HMAX.WEB-DL.720p-MZABI, WEB.1080p-NAISU, WEBRip.1080p-RARBG, HMAX.WEBRip.1080p-CM, HMAX.WEB-DL.1080p-FLUX, HMAX.WEB-DL.2160p-CM, HMAX.WEB-DL.2160p-FLUX, HMAX.WEB-DL.2160p-NAISU)",
+          "legacy_subtitle_id": 8850333,
+          "legacy_uploader_id": 2918969,
+          "uploader": {
+            "uploader_id": 70554,
+            "name": "mayfer",
+            "rank": "Trusted member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dűne",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/hu/subtitles/legacy/8850333",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/hu/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055718,
+              "cd_number": 1,
+              "file_name": "dune.2021.1080p.web.h264-naisu.hun"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6112644",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6112644",
+          "language": "fr",
+          "download_count": 8568,
+          "new_download_count": 1532,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 3,
+          "ratings": 7.7,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-23T12:01:51Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.2160p.HMAX.WEB-DL.x265.10bit.HDR.DDP5.1.Atmos-CM",
+          "comments": "TRUSTED : Resync",
+          "legacy_subtitle_id": 8851457,
+          "legacy_uploader_id": 9006668,
+          "uploader": {
+            "uploader_id": null,
+            "name": "Anonymous",
+            "rank": "anonymous"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/fr/subtitles/legacy/8851457",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/fr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7057358,
+              "cd_number": 1,
+              "file_name": "Dune.2021.2160p.HMAX.WEB-DL.DDP5.1.Atmos.HDR.HEVC-CM.fre"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6111723",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6111723",
+          "language": "he",
+          "download_count": 8344,
+          "new_download_count": 443,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 0,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-23T02:49:50Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HDRip.X264-EVO.Heb",
+          "comments": "",
+          "legacy_subtitle_id": 8851246,
+          "legacy_uploader_id": 2616559,
+          "uploader": {
+            "uploader_id": 69505,
+            "name": "varod",
+            "rank": "translator"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/he/subtitles/legacy/8851246",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/he/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7056793,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HDRip.X264-EVO.Heb"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6272191",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6272191",
+          "language": "fr",
+          "download_count": 8105,
+          "new_download_count": 511,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2022-01-15T17:03:04Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.WEBRip-YTS",
+          "comments": "",
+          "legacy_subtitle_id": 8946229,
+          "legacy_uploader_id": 4923948,
+          "uploader": {
+            "uploader_id": 373725,
+            "name": "tib44",
+            "rank": "Gold member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/fr/subtitles/legacy/8946229",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/fr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7174925,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.WEBRip-YTS.fre"
+            }
+          ]
+        }
+      },
+      {
+        "id": "6109641",
+        "type": "subtitle",
+        "attributes": {
+          "subtitle_id": "6109641",
+          "language": "fr",
+          "download_count": 7689,
+          "new_download_count": 659,
+          "hearing_impaired": false,
+          "hd": true,
+          "fps": 23.976,
+          "votes": 0,
+          "ratings": 0,
+          "from_trusted": false,
+          "foreign_parts_only": false,
+          "upload_date": "2021-10-22T02:39:02Z",
+          "ai_translated": false,
+          "nb_cd": 1,
+          "machine_translated": false,
+          "release": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO",
+          "comments": "",
+          "legacy_subtitle_id": 8849799,
+          "legacy_uploader_id": 7671477,
+          "uploader": {
+            "uploader_id": 227536,
+            "name": "silverstark",
+            "rank": "Read Only Member"
+          },
+          "feature_details": {
+            "feature_id": 1275717,
+            "feature_type": "Movie",
+            "year": 2021,
+            "title": "Dune",
+            "movie_name": "2021 - Dune",
+            "imdb_id": 1160419,
+            "tmdb_id": 438631
+          },
+          "url": "https://www.opensubtitles.com/fr/subtitles/legacy/8849799",
+          "related_links": [
+            {
+              "label": "All subtitles for dune",
+              "url": "https://www.opensubtitles.com/fr/movies/2020-dune",
+              "img_url": "https://s9.opensubtitles.com/features/7/1/7/1275717.jpg"
+            }
+          ],
+          "files": [
+            {
+              "file_id": 7055048,
+              "cd_number": 1,
+              "file_name": "Dune.2021.1080p.HMAX.WEB-DL.DDP5.1.Atmos.x264-EVO-french"
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,113 +1,291 @@
-import Image from "next/image";
+import options from './lib/options';
+import Showcase from './Showcase';
+import { Movie, MovieDetails, Show, ShowDetails, fetchResults } from '../types';
+import fetchDetails from '@/app/lib/fetchDetails';
+import Slider from './components/Slider';
+import ContinueWatching from './ContinueWatching';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+async function fetchData() {
+	//////////////////////////
+	// Trending //
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+	let trending_movies = await fetch('https://api.themoviedb.org/3/trending/movie/week?language=en-US', options).then((res) => res.json());
+	trending_movies = trending_movies.results;
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+	// for each movie, fetch the keywords
+	for (let i = 0; i < trending_movies.length; i++) {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${trending_movies[i].id}/keywords?language=en-US`, options).then((res) =>
+			res.json()
+		);
+		trending_movies[i].keywords = res.keywords;
+	}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+	// add a media type to each object
+	trending_movies.forEach((movie: Movie) => {
+		movie.media_type = 'movie';
+	});
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+	// console.log("trending movies\n\n\n", trending_movies);
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+	//////////////////////////
+	// Top rated movies //
+
+	let top_rated_movies = await fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US', options).then((res) => res.json());
+	top_rated_movies = top_rated_movies.results;
+
+	// for each movie, fetch the keywords
+	for (let i = 0; i < top_rated_movies.length; i++) {
+		const res = await fetch(`https://api.themoviedb.org/3/movie/${top_rated_movies[i].id}/keywords?language=en-US`, options).then((res) =>
+			res.json()
+		);
+		top_rated_movies[i].keywords = res.keywords;
+	}
+
+	// add a media type to each object
+	top_rated_movies.forEach((movie: Movie) => {
+		movie.media_type = 'movie';
+	});
+
+	//////////////////////////
+	// TV //
+
+	const getKeywordsAndFilterAnime = async (tv: Show[]) => {
+		let newTV = tv;
+
+		for (let i = 0; i < tv.length; i++) {
+			const res = await fetch(`https://api.themoviedb.org/3/tv/${newTV[i].id}/keywords`, options).then((res) => res.json());
+			newTV[i].keywords = res.results;
+		}
+
+		newTV = newTV.filter((tv: Show) => {
+			return !tv.keywords.some((keyword) => {
+				return keyword.id === 210024 || keyword.id === 287501;
+			});
+		});
+
+		// console.log(newTV);
+		return newTV;
+	};
+
+	let trending_tv = await fetch('https://api.themoviedb.org/3/trending/tv/week?language=en-US', options).then((res) => res.json());
+	trending_tv = trending_tv.results;
+
+	// filter out anime
+	trending_tv = await getKeywordsAndFilterAnime(trending_tv);
+
+	// fetch second page
+	let res_tv2 = await fetch('https://api.themoviedb.org/3/trending/tv/week?language=en-US&page=2', options).then((res) => res.json());
+
+	trending_tv = trending_tv.concat(res_tv2.results);
+
+	// filter out anime
+	trending_tv = await getKeywordsAndFilterAnime(trending_tv);
+
+	// add a media type to each object
+	trending_tv.forEach((tv: Show) => {
+		tv.media_type = 'tv';
+	});
+
+	// slice to 20
+	trending_tv = trending_tv.slice(0, 20);
+
+	//////////////////////////
+	// Anime //
+
+	let res_anime = await fetch(
+		'https://api.themoviedb.org/3/discover/tv?include_adult=false&language=en-US&page=1&with_keywords=210024|287501',
+		options
+	).then((res) => res.json());
+	res_anime = res_anime.results;
+
+	// add a media type to each object
+	res_anime.forEach((anime: Show) => {
+		anime.media_type = 'tv';
+	});
+
+	//////////////////////////
+	// Documentaries //
+	let comedy = await fetch(
+		'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=35',
+		options
+	).then((res) => res.json());
+	comedy = comedy.results;
+
+	// add a media type to each object
+	comedy.forEach((doc: Movie) => {
+		doc.media_type = 'movie';
+	});
+
+	//////////////////////////
+	// Horror //
+	let horror = await fetch(
+		'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=27',
+		options
+	).then((res) => res.json());
+	horror = horror.results;
+
+	// add a media type to each object
+	horror.forEach((doc: Movie) => {
+		doc.media_type = 'movie';
+	});
+
+	//////////////////
+	// Action //
+	let action = await fetch(
+		'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=28',
+		options
+	).then((res) => res.json());
+	action = action.results;
+
+	// add a media type to each object
+	action.forEach((doc: Movie) => {
+		doc.media_type = 'movie';
+	});
+
+	//////////////////
+	// Sci-fi //
+	let sci_fi = await fetch(
+		'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=878',
+		options
+	).then((res) => res.json());
+
+	sci_fi = sci_fi.results;
+
+	// add a media type to each object
+	sci_fi.forEach((doc: Movie) => {
+		doc.media_type = 'movie';
+	});
+
+	//////////////////
+	// Fantasy //
+	let fantasy = await fetch(
+		'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=14',
+		options
+	).then((res) => res.json());
+
+	fantasy = fantasy.results;
+
+	// add a media type to each object
+	fantasy.forEach((doc: Movie) => {
+		doc.media_type = 'movie';
+	});
+
+	//////////////////////////
+	// Results //
+	const results: fetchResults = {
+		trending_movies: {
+			url: 'https://api.themoviedb.org/3/trending/movie/week?language=en-US&include_adult=false',
+			page: 1,
+			heading: 'Trending Movies',
+			collection: [...trending_movies],
+		},
+		top_rated_movies: {
+			url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&include_adult=false',
+			page: 1,
+			heading: 'Top Rated Movies',
+			collection: [...top_rated_movies],
+		},
+		trending_tv: {
+			url: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US&include_adult=false',
+			page: 1,
+			heading: 'Trending TV',
+			collection: [...trending_tv],
+		},
+		comedy: {
+			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=35',
+			page: 1,
+			heading: 'Comedy',
+			collection: [...comedy],
+		},
+		anime: {
+			url: 'https://api.themoviedb.org/3/discover/tv?language=en-US&with_keywords=210024|287501include_adult=false',
+			page: 1,
+			heading: 'Anime',
+			collection: [...res_anime],
+		},
+		horror: {
+			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=27',
+			page: 1,
+			heading: 'Horror',
+			collection: [...horror],
+		},
+		action: {
+			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=28',
+			page: 1,
+			heading: 'Action',
+			collection: [...action],
+		},
+		sci_fi: {
+			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=878',
+			page: 1,
+			heading: 'Sci-fi',
+			collection: [...sci_fi],
+		},
+		fantasy: {
+			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=14',
+			page: 1,
+			heading: 'Fantasy',
+			collection: [...fantasy],
+		},
+	};
+
+	return results;
+}
+
+const getYtVid = async (result: MovieDetails | ShowDetails, media_type: string) => {
+	const url = `http://${process.env.VERCEL_URL}/api/video?key=`;
+	// fetch videos
+	const vid = await fetch(`https://api.themoviedb.org/3/${media_type}/${result.id}/videos`, options);
+	let res = await vid.json();
+	res = res.results;
+	let key;
+	// console.log(res);
+	key = res.find((vid) => vid.name === 'Official Trailer');
+	// if there's multiple trailers, select the first one
+
+	// fetch from yt api
+	const yt = await fetch(url + key.key);
+	const ytRes = await yt.json();
+
+	return ytRes;
+};
+
+export default async function Home() {
+	const data = await fetchData();
+	//  for showcased, select random number (0 - 1) 50% chance of being 0 or 1
+	// if 0, showcase trending movie
+	// if 1, showcase trending tv
+	// after this pick number between 1 and 5 to showcase
+	const random = Math.floor(Math.random() * 2);
+	let showcased: MovieDetails | ShowDetails;
+	if (random === 0) {
+		showcased = data.trending_movies.collection[Math.floor(Math.random() * 6)];
+	} else {
+		showcased = data.trending_tv.collection[Math.floor(Math.random() * 6)];
+	}
+
+	// console.log('showcased', showcased);
+	// fetch with fetchDetails()
+
+	const res = await fetchDetails(showcased.id, showcased.media_type);
+	showcased = res;
+
+	const vid = await getYtVid(showcased, showcased.media_type);
+
+	return (
+		<main className="min-h-screen w-full overflow-hidden bg-black">
+			<div className="fc w-screen justify-start">
+				<div className="fc mb-10 h-full w-full items-start justify-start">
+					<Showcase vid={vid} result={showcased} />
+					<div className="fc z-10 mt-10 w-full gap-10 sm:pl-24">
+						<ContinueWatching />
+						{Object.keys(data).map((key) => {
+							const collectionItem = data[key as keyof fetchResults];
+							return <Slider key={key} headline={collectionItem.heading} section={collectionItem} />;
+						})}
+					</div>
+				</div>
+			</div>
+		</main>
+	);
 }
