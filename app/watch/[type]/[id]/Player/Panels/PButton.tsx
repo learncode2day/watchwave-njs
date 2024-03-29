@@ -41,7 +41,7 @@ const PButton = ({
       variant="flat"
       color={primary ? "primary" : "default"}
       className={cn(
-        "group w-full justify-between overflow-hidden truncate text-ellipsis",
+        "group w-full justify-between text-wrap text-left",
         className,
       )}
       endContent={nend}

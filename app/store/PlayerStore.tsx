@@ -3,7 +3,7 @@ import { RunOutput } from "@movie-web/providers";
 
 type L = {
   text: string;
-  completed: boolean;
+  completed: boolean | "failed";
 };
 
 export type PlayerState = {

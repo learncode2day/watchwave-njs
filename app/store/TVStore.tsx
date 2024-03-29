@@ -29,7 +29,7 @@ export type TVStore = TVState & TVActions;
 
 export const defaultInitState: TVState = {
   season: 0,
-  episode: 1,
+  episode: 0,
   episodePanelVisible: false,
   isDeep: false,
   displaySeason: 0,

@@ -46,7 +46,7 @@ export async function GET(request: Request) {
     }
     var line = 0;
     // detect identifier
-    if (!s[0].match(/\d+:\d+:\d+/) && s[1].match(/\d+:\d+:\d+/)) {
+    if (!s[0].match(/\d+:\d+:\d+/) && s[1] && s[1].match(/\d+:\d+:\d+/)) {
       cue += s[0].match(/\w+/) + "\n";
       line += 1;
     }

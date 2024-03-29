@@ -4,11 +4,11 @@ import { ScrollShadow } from '@nextui-org/react';
 import { motion } from 'framer-motion';
 import Separator from '../Separator';
 import Subtitle from '../Subtitle';
-import langs from '@/app/assets/lang.json';
+import langs from '@/app/assets/langs.json';
 import { IoArrowBack, IoGlobe } from 'react-icons/io5';
 import { LuLoader } from 'react-icons/lu';
 import { useMainStore } from '@/app/store/main-state-provider';
-import PButton from './Link';
+import PButton from './PButton';
 
 export const SubtitlesPanel = () => {
 	const {
@@ -28,18 +28,18 @@ export const SubtitlesPanel = () => {
 		setLoading(true);
 		if (!result?.id || !currentLang) return;
 		// get 2 letter code from currentLang
-		const l = langs.find((lang) => lang['English name of Language'] === currentLang);
+		const l = langs.find((lang) => lang.lang === currentLang);
 		const type = result.media_type === 'movie' ? 'movie' : 'episode';
 
-		const newsubs = await fetch('/api/os?mode=sub&tmdb_id=' + result.id + '&type=' + type + '&languages=' + l?.['ISO 639-1 Code']);
+		const newsubs = await fetch('/api/os?mode=sub&tmdb_id=' + result.id + '&type=' + type + '&languages=' + l?.iso_639_1);
 		const data = await newsubs.json();
 		console.log(data);
 		setFetchedSubs([...fetchedSubs, ...data]);
 		setLoading(false);
 	};
 	const getLanguageNameFromCode = (code: string) => {
-		const lang = langs.find((lang) => lang['ISO 639-1 Code'] === code);
-		return lang?.['English name of Language'];
+		const lang = langs.find((lang) => lang.iso_639_1 === code);
+		return lang?.lang;
 	};
 
 	return (
@@ -55,7 +55,7 @@ export const SubtitlesPanel = () => {
 			<div className="absolute bottom-24 right-5 z-20 h-1/2 w-full max-w-[350px] overflow-hidden rounded-2xl bg-black/70 text-white/70 shadow-xl backdrop-blur-2xl">
 				<ScrollShadow
 					hideScrollBar
-					className="fc h-full w-full justify-start px-8 py-5 absolute transform-gpu"
+					className="fc absolute h-full w-full transform-gpu justify-start px-8 py-5"
 					style={{
 						transform: `translateX(${isDeep ? '-100%' : '0%'})`,
 						transition: 'transform 0.3s ease-in-out',
@@ -91,17 +91,17 @@ export const SubtitlesPanel = () => {
 								</PButton>
 							</li>
 							{langs
-								.filter((lang) => lang['ISO 639-1 Code'] !== 'en')
+								.filter((lang) => lang.iso_639_1 !== 'en')
 								.map((lang, i) => (
-									<li className="w-full" key={lang['ISO 639-1 Code'] + lang['English name of Language'] + i}>
+									<li className="w-full" key={lang.iso_639_1 + lang.lang + i}>
 										<PButton
 											action={() => {
-												setCurrentLang(lang['English name of Language']);
+												setCurrentLang(lang.lang);
 												setIsDeep(true);
 											}}
 											end="arrow"
 										>
-											{lang['English name of Language']}
+											{lang.lang}
 										</PButton>
 									</li>
 								))}
@@ -114,7 +114,7 @@ export const SubtitlesPanel = () => {
 				</ScrollShadow>
 				<ScrollShadow
 					hideScrollBar
-					className="fc h-full w-full justify-start px-8 py-5 absolute transform-gpu"
+					className="fc absolute h-full w-full transform-gpu justify-start px-8 py-5"
 					style={{
 						transform: `translateX(${isDeep ? '0%' : '100%'})`,
 						transition: 'transform 0.3s ease-in-out',
@@ -122,8 +122,8 @@ export const SubtitlesPanel = () => {
 				>
 					<div className="fc w-full items-start">
 						<div className="fr w-full justify-start gap-2">
-							<button className="text-xl p-2 bg-transparent rounded-lg hover:bg-white/10">
-								<IoArrowBack onClick={() => setIsDeep(false)} />
+							<button onClick={() => setIsDeep(false)} className="rounded-lg bg-transparent p-2 text-xl hover:bg-white/10">
+								<IoArrowBack />
 							</button>
 							<h2 className="font-bold text-white/50">{currentLang} Subtitles</h2>
 						</div>
@@ -131,10 +131,7 @@ export const SubtitlesPanel = () => {
 						<ul className="fc my-2 w-full items-start gap-2">
 							{/* take current language and match with 2 letter code in sources */}
 							{subtitleSources
-								.filter(
-									(source) =>
-										source.language === langs.find((lang) => lang['English name of Language'] === currentLang)?.['ISO 639-1 Code']
-								)
+								.filter((source) => source.language === langs.find((lang) => lang.lang === currentLang)?.iso_639_1)
 								.map((subtitle) => (
 									<Subtitle
 										name={getLanguageNameFromCode(subtitle.language) || 'Subtitle'}

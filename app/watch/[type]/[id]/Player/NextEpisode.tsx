@@ -21,8 +21,8 @@ const NextEpisode = () => {
     // set episode to episode + 1, if last episode in season, set season to season + 1 and episode to 1
     if (episode === result.seasons[season].episodes.length) {
       if (season !== result.seasons.length - 1) {
-        setSeason(season + 1);
-        setEpisode(1);
+        setSeason(season);
+        setEpisode(0);
       } else {
         setFinal(true);
       }

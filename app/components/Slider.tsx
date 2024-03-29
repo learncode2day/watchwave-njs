@@ -56,7 +56,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 		return (
 			<section className="fc w-full items-start gap-3 overflow-hidden">
 				{headline && <h2 className="px-5 text-2xl font-bold text-white sm:text-4xl">{headline}</h2>}
-				<div className="max-w-full overflow-x-hidden">
+				<div className="max-w-full overflow-x-hidden light">
 					<Swiper
 						modules={[Scrollbar, Navigation]}
 						// freeMode={true}
@@ -68,6 +68,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 						scrollbar={{ draggable: true, hide: false, enabled: true }}
 						spaceBetween={10}
 						slidesPerView={'auto'}
+						className="light"
 						onInit={() => setIsLoading && setIsLoading(false)}
 						// onTouchStart={() => setIsDragging(true)}
 						// onTouchEnd={() => setIsDragging(false)}
@@ -85,7 +86,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 								))}
 						{more === false ? null : (
 							<SwiperSlide>
-								<div className="fr aspect-[2/3] min-w-[200px] cursor-pointer gap-3 rounded-lg pr-5 text-white">
+								<div className="fr aspect-[2/3] min-w-[200px] cursor-pointer gap-3 rounded-lg pr-5 text-white dark">
 									<Button
 										// use load more function to take the prev statecollection and in the collection key of that object append the output from loadMore
 										onClick={async () => {
@@ -95,7 +96,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 											setloadMoreisLoading(false);
 										}}
 										variant="ghost"
-										className="py-2 text-white transition-colors hover:text-black"
+										className="py-2 text-white transition-colors hover:text-black light"
 									>
 										{loadMoreIsLoading ? (
 											<>
@@ -112,7 +113,7 @@ const Slider = ({ section, headline, more, removeFromCW, setIsLoading }: Props) 
 						)}
 					</Swiper>
 				</div>
-				<div className="fr gap-2 pl-4 mt-2">
+				<div className="fr gap-2 pl-4 mt-2 light">
 					<Button ref={prev} className="swiper-button-prev px-6 py-1 rounded-full bg-foreground-300 text-black">
 						<IoArrowBack size={30} />
 					</Button>
