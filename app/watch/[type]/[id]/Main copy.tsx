@@ -53,17 +53,6 @@ const Main = ({ params, result, sections }: MainProps) => {
 		setAdBlocker,
 	} = useMainStore((state) => state);
 
-	const { failed, setFailed } = usePlayerStore((state) => state);
-
-	// if failed, on unmount, set failed to false
-	useEffect(() => {
-		return () => {
-			if (failed) {
-				setFailed(false);
-			}
-		};
-	}, []);
-
 	const [palette, setPalette] = useState<Palette | null>(null);
 
 	useEffect(() => {
@@ -200,11 +189,11 @@ radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);`;
 
 	useEffect(() => {
 		// set html overflow to hidden when player is visible
-		if (playerVisibility) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'auto';
-		}
+		// if (playerVisibility) {
+		// 	document.body.style.overflow = 'hidden';
+		// } else {
+		// 	document.body.style.overflow = 'auto';
+		// }
 	}, [playerVisibility]);
 
 	if (isInFuture || isinDMCA) {

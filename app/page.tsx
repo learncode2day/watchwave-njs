@@ -233,6 +233,16 @@ async function fetchData() {
 	return results;
 }
 
+export interface BgVideo {
+	video: {
+		url: string;
+	};
+	audio: {
+		url: string;
+	};
+	yt: string;
+}
+
 const getYtVid = async (result: MovieDetails | ShowDetails, media_type: string) => {
 	'use server';
 	// fetch videos
@@ -245,13 +255,14 @@ const getYtVid = async (result: MovieDetails | ShowDetails, media_type: string) 
 
 	const formats: videoFormat[] = [...y.player_response.streamingData.adaptiveFormats, ...y.player_response.streamingData.formats];
 
-	const final = {
+	const final: BgVideo = {
 		video: {
 			url: '',
 		},
 		audio: {
 			url: '',
 		},
+		yt: '',
 	};
 
 	//fetch 720p video with audio
@@ -269,6 +280,8 @@ const getYtVid = async (result: MovieDetails | ShowDetails, media_type: string) 
 		}
 		i.shift();
 	}
+
+	final.yt = 'https://www.youtube.com/embed/' + key + '?autoplay=1&loop=1&showinfo=0&controls=0';
 
 	// let i = 248;
 

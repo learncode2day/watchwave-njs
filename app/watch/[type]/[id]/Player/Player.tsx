@@ -241,7 +241,6 @@ const Player: React.FC = () => {
 		setup();
 		return () => {
 			ca.add();
-
 			setSources(null);
 			setSrc('');
 			setPlaying(false);
@@ -261,7 +260,6 @@ const Player: React.FC = () => {
 			setAvailableQualities([]);
 			setSubtitleSources([]);
 			setFetchedSubs([]);
-			// setFailed(false);
 			setSubtitle([
 				{
 					start: 0,
@@ -270,7 +268,6 @@ const Player: React.FC = () => {
 				},
 			]);
 			if (!failed) {
-				console.log(failed);
 				console.log('resetting loader');
 				setLoaderO([
 					{
@@ -291,6 +288,7 @@ const Player: React.FC = () => {
 					},
 				]);
 			}
+			setFailed(false);
 		};
 	}, [episode, season]);
 
@@ -409,9 +407,10 @@ const Player: React.FC = () => {
 					setFailed(true);
 				}
 				console.log(hls.levels);
-				hls.loadSource(s.stream.playlist);
-				hls.attachMedia(player.current);
-
+				if (player.current) {
+					hls.loadSource(s.stream.playlist);
+					hls.attachMedia(player.current);
+				}
 				setLoader('parsing', true);
 			}
 			// HLS.js is not supported on platforms that do not have Media Source
@@ -421,7 +420,7 @@ const Player: React.FC = () => {
 			// we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
 			// element through the `src` property. This is using the built-in support
 			// of the plain video element, without using HLS.js.
-			else if (player.current.canPlayType('application/vnd.apple.mpegurl')) {
+			else if (player?.current?.canPlayType('application/vnd.apple.mpegurl')) {
 				setSrc(s.stream.playlist);
 				player.current.src = s.stream.playlist;
 				setLoader('parsing', true);
@@ -443,6 +442,16 @@ const Player: React.FC = () => {
 				setIsControlsVisible(false);
 			}, 2000);
 		}
+	};
+
+	// on tap for mobile, after 2 seconds, hide controls
+	const handleTap = () => {
+		if (timerRef.current) {
+			clearTimeout(timerRef.current);
+		}
+		timerRef.current = setTimeout(() => {
+			setIsControlsVisible(false);
+		}, 2000);
 	};
 
 	// useeffect for isInteracting
@@ -584,7 +593,7 @@ const Player: React.FC = () => {
 				onLoadedData={() => {
 					console.log('loaded');
 					setLoader('init', true);
-					player.current.currentTime = played;
+					if (player.current) player.current.currentTime = played;
 					setLoaded(true);
 				}}
 				onWaiting={() => console.log('waiting')}
@@ -595,7 +604,7 @@ const Player: React.FC = () => {
 				onAbort={() => console.log('abort')}
 				onEmptied={() => console.log('emptied')}
 				onError={(e) => {
-					console.log('error', e);
+					console.error(e);
 				}}
 				onSeeking={() => setSeeking(true)}
 				onSeeked={() => setSeeking(false)}
@@ -627,6 +636,7 @@ const Player: React.FC = () => {
 			{loaded && (
 				<div
 					onMouseMove={handleMouseMove}
+					onTouchStart={handleTap}
 					className={`fc absolute bottom-0 z-10 h-full w-full justify-between overflow-hidden text-white ${
 						!isControlsVisible && 'cursor-none'
 					}`}
@@ -675,13 +685,27 @@ const Player: React.FC = () => {
 					></div>
 					<AnimatePresence>
 						{isControlsVisible && (
-							<>
+							<div className="w-full h-full relative pointer-events-none">
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									transition={{ duration: 0.2 }}
+									className="md:no-pointer:flex md:pointer:hidden fr gap-3 w-full h-full bg-black/50"
+								>
+									{/* back 15s */}
+									<Rewind seek15s={seek15s} className="!text-3xl !size-14" />
+									{/* play btn */}
+									<PlayPause playPause={playPause} className="!text-3xl !size-14" />
+									{/* forward 15s */}
+									<FastForward seek15s={seek15s} className="!text-3xl !size-14" />
+								</motion.div>
 								<motion.div
 									initial={{ opacity: 0, y: -20 }}
 									animate={{ opacity: 1, y: 0 }}
 									exit={{ opacity: 0, y: -20 }}
 									transition={{ duration: 0.2 }}
-									className="fr z-10 w-full justify-start bg-gradient-to-b from-black/90 to-transparent px-5 py-3 pb-6"
+									className="fr absolute top-0 z-10 w-full justify-start bg-gradient-to-b from-black/90 to-transparent px-5 py-3 pb-6"
 								>
 									<div className="fr gap-2 text-xl">
 										<button
@@ -707,13 +731,12 @@ const Player: React.FC = () => {
 										)}
 									</div>
 								</motion.div>
-
 								<motion.div
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									exit={{ opacity: 0, y: 20 }}
 									transition={{ duration: 0.2 }}
-									className="fc z-10 w-full gap-3 bg-gradient-to-b from-transparent to-black/90 px-5 py-3 pt-6"
+									className="fc absolute bottom-0 z-10 w-full gap-3 bg-gradient-to-b from-transparent to-black/90 px-5 py-3 pt-6"
 								>
 									{/* seek bar */}
 									<Seek seekTo={seekTo} setIsInteracting={setIsInteracting} />
@@ -722,14 +745,15 @@ const Player: React.FC = () => {
 										{/* left controls */}
 										<div className="fr w-full gap-3">
 											<div className="fr w-full justify-start gap-2">
-												{/* back 15s */}
-												<Rewind seek15s={seek15s} />
-												{/* play btn */}
-												<PlayPause playPause={playPause} />
-												{/* forward 15s */}
-												<FastForward seek15s={seek15s} />
+												{!isMobile && (
+													<>
+														<Rewind seek15s={seek15s} />
+														<PlayPause playPause={playPause} />
+														<FastForward seek15s={seek15s} />
+													</>
+												)}
 												{/* Volume bar */}
-												<Volume changeVolume={changeVolume} />
+												{!isMobile && <Volume changeVolume={changeVolume} />}
 												{/* time */}
 												<Time />
 											</div>
@@ -750,7 +774,7 @@ const Player: React.FC = () => {
 										</div>
 									</div>
 								</motion.div>
-							</>
+							</div>
 						)}
 					</AnimatePresence>
 				</div>

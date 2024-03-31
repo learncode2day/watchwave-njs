@@ -19,33 +19,20 @@ import { getImagePath } from './lib/tmdb';
 import Link from 'next/link';
 import { Button } from '@nextui-org/react';
 import { cn } from './lib/utils';
+import { BgVideo } from './page';
 
 interface Props {
 	result: MovieDetails | ShowDetails;
-	vid: Video;
+	vid: BgVideo;
 }
 
-interface Video {
-	video: {
-		url: '';
-	};
-	audio: {
-		url: '';
-	};
-}
 const Showcase = ({ result, vid }: Props) => {
 	const imageURL = getImagePath(result.backdrop_path, 'original');
 
 	const { user } = UserAuth();
 	const [isInWatchlist, setIsInWatchlist] = useState(false);
 	const [data, setData] = useState<any>(null);
-	const [video, setVideo] = useState<boolean>(false);
-	const [audio, setAudio] = useState<boolean>(false);
 	const [muted, setMuted] = useState(true);
-
-	useEffect(() => {
-		if (vid.video.url && vid.audio.url) setVideo(true);
-	}, []);
 
 	const generateDetails = () => {
 		// const details = {
@@ -218,11 +205,11 @@ const Showcase = ({ result, vid }: Props) => {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
 				className={cn('w-full h-full leading-none overflow-hidden absolute bg-black', {
-					'aspect-video': video,
+					'aspect-video': vid.video.url,
 				})}
 			>
 				<AnimatePresence>
-					{!video && (
+					{!vid.video.url && (
 						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
 							<Image src={imageURL} priority alt="movie poster" width={1920} height={1080} className="absolute w-full" />
 						</motion.div>
@@ -243,9 +230,8 @@ const Showcase = ({ result, vid }: Props) => {
 						exit={{ opacity: 0 }}
 						width="100%"
 						height="100%"
-						src="//www.youtube.com/embed/qUJYqhKZrwA?autoplay=1&loop=1&showinfo=0&controls=0"
+						src={vid.yt}
 						frameBorder="0"
-						allowFullScreen=
 						className="absolute w-full aspect-video scale"
 					></motion.iframe> */}
 					<motion.video
@@ -256,12 +242,10 @@ const Showcase = ({ result, vid }: Props) => {
 						muted={muted}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						onLoad={() => setAudio(true)}
-						onLoadedData={() => setVideo(true)}
 						// autoplay and loop the video, hide controls
 						src={vid.video.url}
 						autoPlay
-						className="absolute w-full object-cover object-center h-full scale-125 hidden md:block"
+						className="absolute w-full object-cover object-center h-full scale-110 hidden md:block"
 						loop
 					></motion.video>
 				</AnimatePresence>
@@ -273,10 +257,10 @@ const Showcase = ({ result, vid }: Props) => {
 						background: 'radial-gradient(ellipse 100% 80% at 80% 20%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)',
 					}}
 					transition={{ duration: 1 }}
-					className={cn(`mask absolute h-full w-full transition-colors`, { 'bg-opacity-30': vidref.current })}
+					className={cn(`mask absolute h-full w-full transition-colors`, { 'bg-opacity-30': vid.video.url })}
 				/>
 			</motion.div>
-			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-24 ${video && audio ? 'pt-0' : ''}`}>
+			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-24`}>
 				<div className="fc w-full items-start justify-start px-5 pr-10">
 					{result.logo ? (
 						<div className="w-full md:max-w-[calc(50%)] px-3">
@@ -304,7 +288,7 @@ const Showcase = ({ result, vid }: Props) => {
 						</Link>
 						<WatchlistButton isInWatchlist={isInWatchlist} content={result} setData={setData} />
 						{/* mute/unmute */}
-						{video && (
+						{vid.video.url && (
 							<Button
 								variant="ghost"
 								className="text-white hover:text-black sm:text-base hidden md:flex"

@@ -439,7 +439,7 @@
 }
 
 .atom {
-	@apply w-10 h-10 bg-white/0 hover:bg-white/20 transition-colors rounded-full fc cursor-pointer text-2xl;
+	@apply size-10 bg-white/0 hover:bg-white/20 transition-colors rounded-full fc cursor-pointer text-2xl pointer-events-auto;
 }
 .link {
 	@apply px-3 py-2 bg-white/0 hover:bg-white/20 transition-colors rounded-md cursor-pointer w-full text-white/80;

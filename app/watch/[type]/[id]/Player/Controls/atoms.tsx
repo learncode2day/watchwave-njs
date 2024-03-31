@@ -23,24 +23,24 @@ import { usePlayerStore } from '@/app/store/player-state-provider';
 import { useSubtitlesStore } from '@/app/store/subtitles-state-provider';
 import { useTVStore } from '@/app/store/tv-state-provider';
 
-export const Rewind = ({ seek15s }: { seek15s: (direction: 'forward' | 'backward') => void }) => {
+export const Rewind = ({ seek15s, className }: { seek15s: (direction: 'forward' | 'backward') => void; className?: string }) => {
 	return (
-		<div className="atom" onClick={() => seek15s('backward')}>
+		<div className={cn('atom', className)} onClick={() => seek15s('backward')}>
 			<TbRewindBackward15 />
 		</div>
 	);
 };
-export const FastForward = ({ seek15s }: { seek15s: (direction: 'forward' | 'backward') => void }) => {
+export const FastForward = ({ seek15s, className }: { seek15s: (direction: 'forward' | 'backward') => void; className?: string }) => {
 	return (
-		<div className="atom" onClick={() => seek15s('forward')}>
+		<div className={cn('atom', className)} onClick={() => seek15s('forward')}>
 			<TbRewindForward15 />
 		</div>
 	);
 };
-export function PlayPause({ playPause }: { playPause: () => void }) {
+export function PlayPause({ playPause, className }: { playPause: () => void; className?: string }) {
 	const { playing } = usePlayerStore((state) => state);
 	return (
-		<div className="atom" onClick={playPause}>
+		<div className={cn('atom', className)} onClick={playPause}>
 			{playing ? <IoPause /> : <IoPlay />}
 		</div>
 	);
@@ -127,7 +127,7 @@ export const Settings = () => {
 export const Time = () => {
 	const { played, duration, timedetails, setTimedetails, timeLeft } = usePlayerStore((state) => state);
 	return (
-		<div className="fr gap-3">
+		<div className="fr gap-3 pointer-events-auto">
 			<div
 				suppressHydrationWarning
 				className="fr cursor-pointer rounded-full bg-white/0 px-3 py-1 transition-colors hover:bg-white/20"
@@ -183,7 +183,10 @@ export const Episodes = ({ className }: { className?: string }) => {
 	const { episodePanelVisible, setEpisodePanelVisible } = useTVStore((state) => state);
 	return (
 		<div
-			className={cn('fr cursor-pointer gap-2 rounded-full bg-white/0 px-3 py-1 transition-colors hover:bg-white/20', className)}
+			className={cn(
+				'fr cursor-pointer gap-2 rounded-full bg-white/0 px-3 py-1 transition-colors hover:bg-white/20 pointer-events-auto',
+				className
+			)}
 			onClick={() => setEpisodePanelVisible(!episodePanelVisible)}
 		>
 			<IoAlbumsOutline className="text-2xl" />

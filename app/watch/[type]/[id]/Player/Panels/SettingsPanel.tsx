@@ -30,8 +30,8 @@ export const SettingsPanel = ({ changeQuality, setRate }: PanelProps) => {
 			className="absolute inset-0 z-20"
 		>
 			<div className="h-full w-full" onClick={() => setPanelVisible(false)} />
-			<div>
-				<div className="fc absolute bottom-24 right-5 z-20 h-1/2 w-full max-w-[350px] justify-start gap-2 rounded-2xl bg-black/70 px-5 py-6 text-white/70 shadow-xl backdrop-blur-2xl">
+			<div className="absolute py-20 pt-10 fc justify-end h-full bottom-0 right-5 z-20 w-full max-w-[350px] pointer-events-none">
+				<div className="fc w-full h-full justify-start gap-2 rounded-2xl bg-black/70 px-5 py-6 text-white/70 shadow-xl backdrop-blur-2xl overflow-hidden pointer-events-auto">
 					<ScrollShadow hideScrollBar className="fc justify-start gap-5">
 						<div className="fc w-full items-start">
 							<div className="fr w-full items-end justify-between">
