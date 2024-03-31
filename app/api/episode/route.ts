@@ -13,7 +13,6 @@ export async function POST(request: Request) {
 		.setTarget(targets.BROWSER) // target of where the streams will be used
 		.setFetcher(makeStandardFetcher(fetch)) // fetcher, every web request gets called through here
 		.setProxiedFetcher(makeSimpleProxyFetcher(proxyUrl, fetch)) // proxied fetcher, every web request gets called through here
-		.enableConsistentIpForRequests()
 		.addBuiltinProviders() // add all builtin providers, if this is not called, no providers will be added to the controls
 		.build();
 	// console.log(sourceScrapers);
