@@ -134,7 +134,7 @@ const Navbar = () => {
 	];
 
 	return (
-		<div className="sm:fc pointer-events-none fixed z-20 hidden w-full bg-black/20 sm:landscape:pl-4 px-7 backdrop-blur-xl sm:h-full sm:w-auto sm:bg-transparent sm:backdrop-blur-none standalone:pt-10">
+		<div className="sm:fc pointer-events-none fixed z-20 hidden w-full bg-black/20 sm:landscape:pl-4 md:!pl-10 px-7 backdrop-blur-xl sm:h-full sm:w-auto sm:bg-transparent sm:backdrop-blur-none standalone:pt-10">
 			<div className="fr sm:fc pointer-events-auto relative h-full w-full justify-between text-2xl sm:justify-center sm:px-0 sm:pt-0">
 				{icons.map((icon, i) => (
 					<Fragment key={icon.path + i}>
