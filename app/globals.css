@@ -32,11 +32,6 @@
 	}
 }
 
-.mask {
-	background: rgb(0, 0, 0);
-	background: radial-gradient(ellipse 100% 80% at 80% 20%, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 100%);
-}
-
 .lds-ellipsis {
 	display: inline-block;
 	position: relative;
@@ -386,7 +381,7 @@
 .swiper-horizontal > .swiper-scrollbar,
 .swiper-scrollbar.swiper-scrollbar-horizontal {
 	z-index: 50;
-	@apply no-pointer:h-5 pointer:h-2 w-1/2;
+	@apply no-pointer:h-5 pointer:h-2 w-full sm:w-1/2;
 }
 
 .swiper-vertical > .swiper-scrollbar,

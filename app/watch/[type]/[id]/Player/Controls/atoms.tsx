@@ -1,6 +1,6 @@
 'use client';
 /* eslint-disable no-unused-vars */
-import { Slider } from '@nextui-org/react';
+import { Slider, cn } from '@nextui-org/react';
 import { PiSubtitles } from 'react-icons/pi';
 import { format } from 'date-fns';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -179,11 +179,11 @@ export const Subtitle = () => {
 	);
 };
 
-export const Episodes = () => {
+export const Episodes = ({ className }: { className?: string }) => {
 	const { episodePanelVisible, setEpisodePanelVisible } = useTVStore((state) => state);
 	return (
 		<div
-			className="fr cursor-pointer gap-2 rounded-full bg-white/0 px-3 py-1 transition-colors hover:bg-white/20"
+			className={cn('fr cursor-pointer gap-2 rounded-full bg-white/0 px-3 py-1 transition-colors hover:bg-white/20', className)}
 			onClick={() => setEpisodePanelVisible(!episodePanelVisible)}
 		>
 			<IoAlbumsOutline className="text-2xl" />

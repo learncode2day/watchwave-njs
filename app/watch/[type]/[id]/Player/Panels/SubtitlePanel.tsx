@@ -22,6 +22,7 @@ export const SubtitlesPanel = () => {
 		isDeep,
 		setIsDeep,
 		loading,
+		setSubtitle,
 	} = useSubtitlesStore((state) => state);
 	const { result } = useMainStore((state) => state);
 	const addMoreSubs = async () => {
@@ -70,8 +71,16 @@ export const SubtitlesPanel = () => {
 							<li className="w-full">
 								<PButton
 									action={() => {
-										setCurrentLang('English');
-										setIsDeep(true);
+										setCurrentLang('Off');
+										// clear subs
+										setSubtitle([
+											{
+												start: 0,
+												end: 0,
+												text: '',
+											},
+										]);
+										setIsDeep(false);
 									}}
 									end="none"
 								>

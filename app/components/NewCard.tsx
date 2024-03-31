@@ -1,5 +1,5 @@
 import { Movie, MovieDetails, Show, ShowDetails, recommendationProps } from '@/types';
-import { Button, Popover, PopoverContent, PopoverTrigger, Tooltip } from '@nextui-org/react';
+import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, Tooltip, useDisclosure } from '@nextui-org/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
@@ -11,6 +11,7 @@ import { UserAuth } from '../context/AuthContext';
 import { format } from 'date-fns';
 import { toast } from 'sonner';
 import { getImagePath } from '../lib/tmdb';
+import { redirect } from 'next/navigation';
 
 interface Props {
 	content: Show | Movie | MovieDetails | ShowDetails | recommendationProps;
@@ -22,7 +23,6 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 	const cw = useAddToContinueWatching(content.media_type, content.id);
 	const [data, setData] = useState<any>(null);
-	const [popover, setPopover] = useState(false);
 	const { add, remove } = useAddToWatchlist(content.media_type, content.id);
 
 	const [isInWatchlist, setIsInWatchlist] = useState(false);
@@ -81,56 +81,56 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 		card.style.setProperty('--mouse-y', `${e.clientY - cardRect.top}px`);
 	};
 
+	const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
 	return (
 		<>
-			<Popover
-				isOpen={popover}
-				onClick={() => setPopover(false)}
-				onOpenChange={(open) => setPopover(open)}
-				showArrow
-				backdrop="opaque"
-				placement="right"
-				classNames={{
-					base: [
-						// arrow colort
-						'before:bg-default-200',
-					],
-				}}
-			>
-				<PopoverTrigger>
-					<div></div>
-				</PopoverTrigger>
-				<PopoverContent>
-					{() => (
-						<div className="max-w-[300px] px-1 py-2">
-							{content.backdrop_path && (
-								<Image
-									src={getImagePath(content.backdrop_path, 'w500')}
-									alt={'title' in content ? content.title : content.name}
-									width={300}
-									height={450}
-									className="mb-3 aspect-video h-full w-full rounded-2xl"
-								/>
-							)}
-
-							<h3 className="font-bold">
-								{'title' in content ? content.title : content.name} •{' '}
-								{'release_date' in content && content.release_date.length !== 0
-									? content.release_date.split('-')[0]
-									: 'first_air_date' in content && content.first_air_date.length !== 0
-										? content.first_air_date.split('-')[0]
-										: 'N/A'}
-								{'runtime' in content
-									? ` • ${format(new Date(0, 0, 0, 0, content.runtime), "h 'hr' m 'min'")}`
-									: 'number_of_episodes' in content
-										? `• ${content.number_of_episodes} episodes • ${content.number_of_seasons} seasons`
-										: ''}
-							</h3>
-							<p className="w-full">{content.overview}</p>
-						</div>
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+				<ModalContent>
+					{(onClose) => (
+						<>
+							<ModalHeader className="flex flex-col gap-1">{'title' in content ? content.title : content.name}</ModalHeader>
+							<ModalBody>
+								{content.backdrop_path && (
+									<Image
+										src={getImagePath(content.backdrop_path, 'original')}
+										alt="poster"
+										width={300}
+										height={450}
+										className="w-full rounded-xl"
+									/>
+								)}
+								<div className="fc gap-2">
+									<div className="fr gap-2">
+										<h3 className="font-bold">
+											{'title' in content ? content.title : content.name} •{' '}
+											{'release_date' in content && content.release_date.length !== 0
+												? content.release_date.split('-')[0]
+												: 'first_air_date' in content && content.first_air_date.length !== 0
+													? content.first_air_date.split('-')[0]
+													: 'N/A'}
+											{'runtime' in content
+												? ` • ${format(new Date(0, 0, 0, 0, content.runtime), "h 'hr' m 'min'")}`
+												: 'number_of_episodes' in content
+													? `• ${content.number_of_episodes} episodes • ${content.number_of_seasons} seasons`
+													: ''}
+										</h3>
+									</div>
+									<p className="text-sm text-foreground/50">{content.overview}</p>
+								</div>
+							</ModalBody>
+							<ModalFooter>
+								<Button color="danger" variant="light" onPress={onClose}>
+									Close
+								</Button>
+								<Link href={`/watch/${content.media_type}/${content.id}`}>
+									<Button color="primary">Watch</Button>
+								</Link>
+							</ModalFooter>
+						</>
 					)}
-				</PopoverContent>
-			</Popover>
+				</ModalContent>
+			</Modal>
 
 			<div
 				onMouseMove={mouseMove}
@@ -217,7 +217,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 										variant="ghost"
 										size="sm"
 										className="text-white hover:text-black"
-										onClick={() => setPopover(true)}
+										onClick={onOpen}
 									>
 										<IoList size={15} />
 									</Button>
@@ -306,7 +306,7 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 										variant="ghost"
 										size="md"
 										className="text-white"
-										onClick={() => setPopover(true)}
+										onClick={onOpen}
 									>
 										<IoList size={22} />
 									</Button>

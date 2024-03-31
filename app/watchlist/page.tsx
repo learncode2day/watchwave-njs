@@ -226,7 +226,7 @@ const Watchlist = () => {
 							{movies && (
 								<>
 									<h3 className="text-xl font-bold text-white">Movies ({movies.length})</h3>
-									<div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 md:gap-5 gap-3 place-items-start">
+									<div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7 md:gap-5 gap-3 place-items-start">
 										{movies.length === 0 ? (
 											<div className="text-white">No movies added</div>
 										) : (
@@ -244,7 +244,7 @@ const Watchlist = () => {
 							{tv && (
 								<>
 									<h3 className="mt-16 text-xl font-bold text-white">TV Shows ({tv.length})</h3>
-									<div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 md:gap-5 gap-3 place-items-start">
+									<div className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7 md:gap-5 gap-3 place-items-start">
 										{tv.length === 0 ? (
 											<div className="text-white">No TV shows added</div>
 										) : (

@@ -23,6 +23,7 @@ const ContinueWatching = () => {
 				if (!continueWatchingData) return;
 				// map through the array and fetch the details of each item
 				continueWatching = await fetchContentDataFromCW(continueWatchingData);
+				console.log(continueWatching);
 			}
 		}
 

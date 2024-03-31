@@ -20,7 +20,7 @@ const WatchlistButton = ({ content, setData, isInWatchlist }: Props) => {
 		<Button
 			size="lg"
 			radius="sm"
-			className="group h-11 text-sm font-semibold text-white hover:text-black sm:text-base"
+			className="group h-11 font-semibold text-white hover:text-black text-sm md:text-medium px-unit-4 md:px-unit-6"
 			variant="ghost"
 			onClick={() => {
 				if (user) {

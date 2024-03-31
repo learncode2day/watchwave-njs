@@ -1,12 +1,13 @@
 'use client';
 import { cn } from '@/app/lib/utils';
 import { usePlayerStore } from '@/app/store/player-state-provider';
+import { Button } from '@nextui-org/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { IoCheckmark, IoClose } from 'react-icons/io5';
 import { LuLoader } from 'react-icons/lu';
 
-const MultiStepLoader = () => {
+const MultiStepLoader = ({ failAll }: { failAll: () => void }) => {
 	// mock loading state
 	const { loaderO } = usePlayerStore((state) => state);
 	const [value, setValue] = useState(0);
@@ -32,6 +33,9 @@ const MultiStepLoader = () => {
 					}}
 					className="fixed inset-0 z-[100] flex h-full w-full items-center justify-center backdrop-blur-2xl"
 				>
+					<Button className="absolute top-2 right-2 z-50" onClick={() => failAll()}>
+						Switch to Embeds
+					</Button>
 					<div className="relative z-50 h-96">
 						{/* FOR TESTING:DIV of buttons that set the loading state */}
 						{/* <div className="z-50 flex justify-center gap-4">

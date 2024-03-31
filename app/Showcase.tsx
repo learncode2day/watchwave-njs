@@ -18,6 +18,7 @@ import PlayButton from './components/PlayButton';
 import { getImagePath } from './lib/tmdb';
 import Link from 'next/link';
 import { Button } from '@nextui-org/react';
+import { cn } from './lib/utils';
 
 interface Props {
 	result: MovieDetails | ShowDetails;
@@ -90,7 +91,7 @@ const Showcase = ({ result, vid }: Props) => {
 					value: <li>{format(new Date(0, 0, 0, 0, result.runtime), "h 'hr' m 'min'").toString()}</li>,
 				},
 			];
-
+		console.log(result.content_rating);
 		if ('name' in result)
 			details = [
 				{
@@ -117,7 +118,7 @@ const Showcase = ({ result, vid }: Props) => {
 			];
 
 		// remove undefined or NaN or null values
-		const newDetails = details.filter((detail) => detail.value);
+		const newDetails = details.filter((detail) => detail.value || detail.value === ' ');
 
 		// create an <li> for each value
 		// in between, add a bullet point wrapped in a <li>
@@ -206,29 +207,6 @@ const Showcase = ({ result, vid }: Props) => {
 	console.log(vid);
 	const vidref = useRef<HTMLVideoElement>(null);
 	const audioref = useRef<HTMLAudioElement>(null);
-	useEffect(() => {
-		vidref.current?.play();
-		audioref.current?.play();
-		// bind audio to video
-
-		audioref.current?.addEventListener('play', () => {
-			vidref.current?.play();
-		});
-
-		audioref.current?.addEventListener('pause', () => {
-			vidref.current?.pause();
-		});
-
-		return () => {
-			audioref.current?.removeEventListener('play', () => {
-				vidref.current?.play();
-			});
-
-			audioref.current?.removeEventListener('pause', () => {
-				vidref.current?.pause();
-			});
-		};
-	}, []);
 
 	return (
 		<>
@@ -239,36 +217,53 @@ const Showcase = ({ result, vid }: Props) => {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1 }}
-				className="h-full w-full leading-none relative"
+				className={cn('w-full h-full leading-none overflow-hidden absolute bg-black', {
+					'aspect-video': video,
+				})}
 			>
 				<AnimatePresence>
-					{!video ||
-						(!audio && (
-							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-								<Image src={imageURL} priority alt="movie poster" width={1920} height={1080} className="absolute w-full" />
-							</motion.div>
-						))}
+					{!video && (
+						<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+							<Image src={imageURL} priority alt="movie poster" width={1920} height={1080} className="absolute w-full" />
+						</motion.div>
+					)}
+					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+						<Image
+							src={imageURL}
+							priority
+							alt="movie poster"
+							width={1920}
+							height={1080}
+							className="block md:hidden absolute w-full h-full object-cover object-center"
+						/>
+					</motion.div>
+					{/* <motion.iframe
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						width="100%"
+						height="100%"
+						src="//www.youtube.com/embed/qUJYqhKZrwA?autoplay=1&loop=1&showinfo=0&controls=0"
+						frameBorder="0"
+						allowFullScreen=
+						className="absolute w-full aspect-video scale"
+					></motion.iframe> */}
 					<motion.video
 						playsInline
 						ref={vidref}
 						// if video is loaded, show it
 						initial={{ opacity: 0 }}
+						muted={muted}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
+						onLoad={() => setAudio(true)}
 						onLoadedData={() => setVideo(true)}
+						// autoplay and loop the video, hide controls
 						src={vid.video.url}
-						className="absolute aspect-video w-full object-cover object-center min-w-full min-h-full"
 						autoPlay
-						onPlay={() => {
-							audioref.current?.play();
-						}}
-						onPause={() => {
-							audioref.current?.pause();
-						}}
+						className="absolute w-full object-cover object-center h-full scale-125 hidden md:block"
 						loop
-					>
-						<audio loop onLoadedData={() => setAudio(true)} ref={audioref} src={vid.audio.url} className="hidden" muted={muted} />
-					</motion.video>
+					></motion.video>
 				</AnimatePresence>
 				<motion.div
 					initial={{
@@ -278,14 +273,21 @@ const Showcase = ({ result, vid }: Props) => {
 						background: 'radial-gradient(ellipse 100% 80% at 80% 20%, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%)',
 					}}
 					transition={{ duration: 1 }}
-					className={`mask absolute h-full w-full`}
+					className={cn(`mask absolute h-full w-full transition-colors`, { 'bg-opacity-30': vidref.current })}
 				/>
 			</motion.div>
-			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-24 ${video && audio ? 'pt-0 aspect-video' : ''}`}>
+			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-24 ${video && audio ? 'pt-0' : ''}`}>
 				<div className="fc w-full items-start justify-start px-5 pr-10">
 					{result.logo ? (
-						<div className="w-full max-w-[calc(50%)] px-3">
-							<Image src={result.logo} alt="movie logo" width={300} height={200} className="mb-5 max-h-[250px] w-full max-w-[250px]" />
+						<div className="w-full md:max-w-[calc(50%)] px-3">
+							<Image
+								src={result.logo}
+								alt="movie logo"
+								objectFit="cover"
+								width={300}
+								height={200}
+								className="mb-5  w-full md:max-w-[250px]"
+							/>
 						</div>
 					) : (
 						<h1 className="mb-3 pr-10 text-5xl font-bold text-white md:mb-5 md:text-8xl">
@@ -294,7 +296,7 @@ const Showcase = ({ result, vid }: Props) => {
 					)}
 
 					{/* details */}
-					<ul className="showcase_detail fr gap-3 font-medium text-white/80 sm:text-sm md:mt-1">{generateDetails()}</ul>
+					<ul className="showcase_detail fr gap-3 font-medium text-white/80 text-sm sm:text-base md:mt-1">{generateDetails()}</ul>
 					<p className="mt-4 max-w-[50ch] text-base font-medium leading-normal text-white/80">{result.overview}</p>
 					<div className="fr mt-4 gap-3 light">
 						<Link href={`/watch/${result.media_type}/${result.id}`}>
@@ -302,15 +304,17 @@ const Showcase = ({ result, vid }: Props) => {
 						</Link>
 						<WatchlistButton isInWatchlist={isInWatchlist} content={result} setData={setData} />
 						{/* mute/unmute */}
-						<Button
-							variant="ghost"
-							className="text-white hover:text-black sm:text-base"
-							radius="full"
-							isIconOnly
-							onClick={() => setMuted(!muted)}
-						>
-							{muted ? <IoVolumeMute /> : <IoVolumeHigh />}
-						</Button>
+						{video && (
+							<Button
+								variant="ghost"
+								className="text-white hover:text-black sm:text-base hidden md:flex"
+								radius="full"
+								isIconOnly
+								onClick={() => setMuted(!muted)}
+							>
+								{muted ? <IoVolumeMute /> : <IoVolumeHigh />}
+							</Button>
+						)}
 					</div>
 				</div>
 			</div>

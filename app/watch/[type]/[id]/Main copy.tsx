@@ -18,6 +18,7 @@ import { getImagePath } from '@/app/lib/tmdb';
 import { useMainStore } from '@/app/store/main-state-provider';
 import Vibrant from 'node-vibrant';
 import { Palette } from 'node-vibrant/lib/color';
+import { usePlayerStore } from '@/app/store/player-state-provider';
 export interface DetailsData {
 	recommendations: { results: recommendationProps[] };
 	credits: any;
@@ -51,6 +52,17 @@ const Main = ({ params, result, sections }: MainProps) => {
 		setResult,
 		setAdBlocker,
 	} = useMainStore((state) => state);
+
+	const { failed, setFailed } = usePlayerStore((state) => state);
+
+	// if failed, on unmount, set failed to false
+	useEffect(() => {
+		return () => {
+			if (failed) {
+				setFailed(false);
+			}
+		};
+	}, []);
 
 	const [palette, setPalette] = useState<Palette | null>(null);
 

@@ -6,10 +6,11 @@ import { EpisodePanel } from './Panels/EpisodePanel';
 import { useMainStore } from '@/app/store/main-state-provider';
 import { toast } from 'sonner';
 import { useTVStore } from '@/app/store/tv-state-provider';
+import { Episodes } from './Controls/atoms';
 
 const IframePlayer = () => {
 	const { result, setPlayerVisibility, adBlocker, source } = useMainStore((state) => state);
-	const { episode, season } = useTVStore((state) => state);
+	const { episode, season, episodePanelVisible } = useTVStore((state) => state);
 	const sourceCollectionMovie = result &&
 		'title' in result && [
 			`https://vidsrc.to/embed/movie/${result.id}`,
@@ -34,8 +35,12 @@ const IframePlayer = () => {
 		];
 
 	useEffect(() => {
-		if (adBlocker) toast.info('Please use adBlocker or Brave Browser to avoid ads');
+		if (adBlocker)
+			toast.info('Please use adBlocker or Brave Browser to avoid ads', {
+				position: 'top-right',
+			});
 	}, []);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, filter: 'blur(10px)' }}
@@ -45,22 +50,23 @@ const IframePlayer = () => {
 		>
 			{result && (
 				<>
-					<div className="fr w-full justify-start bg-black px-5 py-3">
-						<div className="fr gap-2 text-xl">
-							<button className="fr gap-1 text-white/50 transition-colors hover:text-white" onClick={() => setPlayerVisibility(false)}>
-								<IoChevronBack /> <span>Back</span>
-							</button>
-							<p className="text-white/50">/</p>
-							<h1>{'title' in result ? result.title : result.name}</h1>
-						</div>
-					</div>
+					<div className="fr w-full justify-start bg-black px-5 py-3"></div>
 					{'title' in result && sourceCollectionMovie && (
 						<>
 							<iframe allowFullScreen={true} className="h-full w-full" src={sourceCollectionMovie[source]} />
 							<div className="fr w-full justify-start bg-black px-5 py-3">
-								<div className="fr gap-2 text-xl">
+								<div className="fr gap-2 text-xl justify-between">
+									<div className="fr gap-2 text-xl">
+										<button
+											className="fr gap-1 text-white/50 transition-colors hover:text-white"
+											onClick={() => setPlayerVisibility(false)}
+										>
+											<IoChevronBack /> <span>Back</span>
+										</button>
+										<p className="text-white/50">/</p>
+										<h1>{'title' in result ? result.title : result.name}</h1>
+									</div>
 									<SourcesButton sourceCollection={sourceCollectionMovie} />
-									{result.media_type === 'tv' && <EpisodePanel />}
 								</div>
 							</div>
 						</>
@@ -69,9 +75,22 @@ const IframePlayer = () => {
 						<>
 							<iframe allowFullScreen={true} className="h-full w-full" src={sourceCollectionTV[source]} />
 							<div className="fr w-full justify-start bg-black px-5 py-3">
-								<div className="fr gap-2 text-xl">
-									<SourcesButton sourceCollection={sourceCollectionTV} />
-									{result.media_type === 'tv' && <EpisodePanel />}
+								<div className="fr gap-2 text-xl justify-between w-full">
+									<div className="fr gap-2 text-xl">
+										<button
+											className="fr gap-1 text-white/50 transition-colors hover:text-white"
+											onClick={() => setPlayerVisibility(false)}
+										>
+											<IoChevronBack /> <span>Back</span>
+										</button>
+										<p className="text-white/50">/</p>
+										<h1>{'title' in result ? result.title : result.name}</h1>
+									</div>
+									<div className="fr gap-2">
+										<Episodes className="text-sm" />
+										<SourcesButton sourceCollection={sourceCollectionTV} />
+									</div>
+									{result.media_type === 'tv' && episodePanelVisible && <EpisodePanel />}
 								</div>
 							</div>
 						</>

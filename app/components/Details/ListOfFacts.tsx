@@ -39,10 +39,17 @@ const ListOfFacts = ({ result, external }: { result: any; external: any }) => {
 						</ul>
 					) : (
 						<ul className="inline-flex flex-wrap gap-2 pb-3 font-bold tracking-tight">
-							<li className="inline-detail">
-								{result.first_air_date.split('-')[0]} - {result.last_air_date.split('-')[0]}
-							</li>
-							{(result.content_rating || result.number_of_seasons || result.number_of_episodes || external.imdb_id) && <span>•</span>}
+							{result.first_air_date && result.last_air_date && (
+								<li className="inline-detail">
+									{result.first_air_date.split('-')[0]} - {result.last_air_date.split('-')[0]}
+								</li>
+							)}
+							{result.first_air_date &&
+								result.last_air_date &&
+								result.content_rating &&
+								result.number_of_seasons &&
+								result.number_of_episodes &&
+								external.imdb_id && <span>•</span>}
 							{result.content_rating && (
 								<>
 									<li className="inline-detail rounded-lg border-1 border-[#a1a1a1] px-1.5">{result.content_rating}</li>

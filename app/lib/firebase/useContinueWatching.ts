@@ -40,8 +40,9 @@ const useAddToContinueWatching = (type: string | null | undefined, id: number | 
 		const continueWatchingSnapshot = await getDoc(userRef);
 
 		const continueWatchingData = continueWatchingSnapshot.data()?.continueWatching ?? [];
+		console.log(continueWatchingData);
 		// remove object from array
-		const updatedData = continueWatchingData.filter((item) => item.id !== id && item.type !== type);
+		const updatedData = continueWatchingData.filter((item) => item.id !== id || item.type !== type);
 		console.log('Removing ', updatedData);
 
 		await setDoc(

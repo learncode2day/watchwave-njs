@@ -1,3 +1,4 @@
+import { useMainStore } from '@/app/store/main-state-provider';
 import { usePlayerStore } from '@/app/store/player-state-provider';
 import { useSubtitlesStore } from '@/app/store/subtitles-state-provider';
 import React, { useEffect } from 'react';
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const KeyboardControls = ({ seekTo, playPause, changeVolume, startPIP, player }: Props) => {
+	const { setPlayerVisibility } = useMainStore((state) => state);
 	const { setPlayed, played, setMuted, muted, duration, volume, setVolume } = usePlayerStore((state) => state);
 	const { fontSize, setFontSize, timeOffset, setTimeOffset, setBottom, bottom } = useSubtitlesStore((state) => state);
 
@@ -23,6 +25,10 @@ const KeyboardControls = ({ seekTo, playPause, changeVolume, startPIP, player }:
 		const handleKeyDown = (e: KeyboardEvent) => {
 			if (e.shiftKey || e.metaKey || e.altKey || e.ctrlKey) return;
 			switch (e.key) {
+				case 'Escape':
+					// Exit
+					setPlayerVisibility(false);
+					break;
 				case ' ':
 					// Toggle play/pause when space is pressed
 					playPause();

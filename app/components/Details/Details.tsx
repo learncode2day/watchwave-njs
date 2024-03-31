@@ -40,7 +40,7 @@ const Details = () => {
 		<>
 			{/* check if result is type MovieDetails */}
 			{result && (
-				<div className="fc relative z-10 mt-[25vh] w-full pl-14 pt-7">
+				<div className="fc relative z-10 mt-[5vh] sm:mt-[25vh] w-full sm:no-pointer:pl-0 sm:pl-14 pt-7">
 					<div className="fc md:fr mb-12 w-full max-w-7xl gap-5 px-5 sm:px-10 md:items-start md:justify-start">
 						{result.poster_path && (
 							<Image
