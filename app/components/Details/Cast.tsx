@@ -15,11 +15,7 @@ const Cast = ({ credits, imdbId }: Props) => {
 				{credits && credits && credits.length !== 0 && (
 					<>
 						{credits.slice(0, 12).map((cast: any) => (
-							<Link
-								href={`https://www.imdb.com/name/${cast.imdb_id}`}
-								key={cast.id}
-								className="fr gap-3 bg-foreground-100 rounded-xl px-3 py-2"
-							>
+							<Link href={`/cast/${cast.id}`} key={cast.id} className="fr gap-3 bg-foreground-100 rounded-xl px-3 py-2">
 								{cast.profile_path ? (
 									<Image
 										src={getImagePath(cast.profile_path, 'w185')}

@@ -1,4 +1,4 @@
-import { buildProviders, targets, makeStandardFetcher, makeSimpleProxyFetcher } from '@movie-web/providers';
+import { targets, makeStandardFetcher, makeProviders } from '@movie-web/providers';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
@@ -6,14 +6,11 @@ export async function POST(request: Request) {
 	const { episode, season, id, name, release, type } = body;
 	console.log('Fetched Sources\n\n', body);
 	// get new episode
-	const proxyUrl = 'https://jocular-fairy-e633ed.netlify.app';
-	const providers = buildProviders()
-		.setTarget(targets.BROWSER) // target of where the streams will be used
-		.setFetcher(makeStandardFetcher(fetch)) // fetcher, every web request gets called through here
-		.setProxiedFetcher(makeSimpleProxyFetcher(proxyUrl, fetch)) // proxied fetcher, every web request gets called through here
-		.addBuiltinProviders() // add all builtin providers, if this is not called, no providers will be added to the controls
-		.build();
-	// console.log(sourceScrapers);
+	// const proxyUrl = 'https://jocular-fairy-e633ed.netlify.app';
+	const providers = makeProviders({
+		fetcher: makeStandardFetcher(fetch),
+		target: targets.BROWSER, // check out https://movie-web.github.io/providers/essentials/targets
+	});
 	let media;
 
 	if (type === 'movie') {

@@ -352,7 +352,16 @@ const Player: React.FC = () => {
 			setQuality(qualities[0]);
 
 			// set url to the highest quality available
-			setSrc(s.stream.qualities[qualities[0] as keyof typeof s.stream.qualities]?.url);
+
+			if (s.stream.qualities[qualities[0] as keyof typeof s.stream.qualities]?.url.includes('shegu.net')) {
+				// append KEY7=23&KEY8=0
+				const url = s.stream.qualities[qualities[0] as keyof typeof s.stream.qualities]?.url;
+				const newUrl = `${url}&KEY7=23&KEY8=0`;
+				setSrc(newUrl);
+			} else {
+				setSrc(s.stream.qualities[qualities[0] as keyof typeof s.stream.qualities]?.url);
+			}
+
 			setLoader('parsing', true);
 
 			// set subtitles variable
@@ -707,7 +716,7 @@ const Player: React.FC = () => {
 									transition={{ duration: 0.2 }}
 									className="fr absolute top-0 z-10 w-full justify-start bg-gradient-to-b from-black/90 to-transparent px-5 py-3 pb-6"
 								>
-									<div className="fr gap-2 text-xl">
+									<div className="fr gap-2 text-xl pointer-events-auto">
 										<button
 											className="fr gap-1 text-white/50 transition-colors hover:text-white"
 											onClick={() => {
