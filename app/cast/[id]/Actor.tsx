@@ -58,7 +58,7 @@ const Actor = ({ actor }: Props) => {
 						initial={{ opacity: 0, filter: 'blur(10px)' }}
 						// blur out
 						animate={{ opacity: 1, filter: 'blur(0px)' }}
-						className="relative"
+						className="relative z-20"
 					>
 						<Image
 							alt={actor.name}
@@ -67,7 +67,7 @@ const Actor = ({ actor }: Props) => {
 							height={450}
 							className="max-w-[200px] md:max-w-[200px] lg:max-w-[300px] w-full md:w-[initial] rounded-2xl z-30 relative"
 						/>
-						<div className="scale-125 absolute inset-0 blur-2xl z-20 opacity-50 pointer-events-none">
+						<div className="scale-110 absolute inset-0 blur-2xl z-20 opacity-50 pointer-events-none">
 							<Image
 								src={getImagePath(actor.profile_path, 'w300')}
 								className="w-full h-full"
