@@ -119,12 +119,12 @@ const NewCard = ({ content, removeFromCW }: Props) => {
 									<p className="text-sm text-foreground/50">{content.overview}</p>
 								</div>
 							</ModalBody>
-							<ModalFooter>
+							<ModalFooter className="light">
 								<Button color="danger" variant="light" onPress={onClose}>
 									Close
 								</Button>
 								<Link href={`/watch/${content.media_type}/${content.id}`}>
-									<Button color="primary">Watch</Button>
+									<Button>Watch</Button>
 								</Link>
 							</ModalFooter>
 						</>

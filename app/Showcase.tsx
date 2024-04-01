@@ -260,7 +260,7 @@ const Showcase = ({ result, vid }: Props) => {
 					className={cn(`mask absolute h-full w-full transition-colors`, { 'bg-opacity-30': vid.video.url })}
 				/>
 			</motion.div>
-			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-24`}>
+			<div className={`fc z-10 w-full items-start justify-start pt-60 sm:pl-28`}>
 				<div className="fc w-full items-start justify-start px-5 pr-10">
 					{result.logo ? (
 						<div className="w-full md:max-w-[calc(50%)] px-3">

@@ -50,7 +50,7 @@ const Actor = ({ actor }: Props) => {
 	const [index, setIndex] = useState<number[]>([0, 20]);
 
 	return (
-		<div className="min-h-screen w-full bg-background text-foreground dark pt-28 sm:pl-20 md:pl-36">
+		<div className="min-h-screen w-full bg-background text-foreground dark pt-28 sm:pl-20 md:pl-32">
 			<div className="w-full fc">
 				<div className="fc md:fr md:justify-start md:items-start w-full  px-10 gap-5">
 					<motion.div

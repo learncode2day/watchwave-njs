@@ -86,7 +86,7 @@ const Watchlist = () => {
 	if (listView) {
 		return (
 			<div className="min-h-screen w-full bg-background text-foreground">
-				<div className="fc min-h-screen w-full justify-start items-start gap-20 pt-28 sm:pl-36">
+				<div className="fc min-h-screen w-full justify-start items-start gap-20 pt-28 sm:pl-32">
 					{!user ? (
 						<div className="fc h-full w-full text-white">Login to view your watchlist</div>
 					) : (

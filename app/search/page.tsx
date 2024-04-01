@@ -93,7 +93,7 @@ const Search: React.FC = () => {
 					<div className="pointer-events-none absolute inset-0  h-1/3 bg-gradient-to-b from-zinc-950 to-transparent"></div>
 				</div>
 			</div>
-			<div className="fc mx-auto max-w-6xl justify-start px-3 pt-24 antialiased sm:px-10 sm:pl-36">
+			<div className="fc mx-auto max-w-6xl justify-start px-3 pt-24 antialiased sm:px-10 sm:pl-32">
 				<h1 className="z-10 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text py-4 text-center text-5xl font-medium tracking-tight text-transparent md:text-7xl">
 					Search
 				</h1>
