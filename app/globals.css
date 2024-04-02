@@ -411,7 +411,7 @@
 }
 
 .inline-detail {
-	text-wrap: nowrap;
+	@apply px-2 text-nowrap;
 }
 
 .glow {

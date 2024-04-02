@@ -5,6 +5,7 @@ import fetchDetails from '@/app/lib/fetchDetails';
 import Slider from './components/Slider';
 import ContinueWatching from './ContinueWatching';
 import ytdl, { videoFormat } from 'ytdl-core';
+import StreamingServices from './StreamingServices';
 
 async function fetchData() {
 	//////////////////////////
@@ -180,17 +181,17 @@ async function fetchData() {
 			heading: 'Trending Movies',
 			collection: [...trending_movies],
 		},
-		top_rated_movies: {
-			url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&include_adult=false',
-			page: 1,
-			heading: 'Top Rated Movies',
-			collection: [...top_rated_movies],
-		},
 		trending_tv: {
 			url: 'https://api.themoviedb.org/3/trending/tv/week?language=en-US&include_adult=false',
 			page: 1,
 			heading: 'Trending TV',
 			collection: [...trending_tv],
+		},
+		top_rated_movies: {
+			url: 'https://api.themoviedb.org/3/movie/top_rated?language=en-US&include_adult=false',
+			page: 1,
+			heading: 'Top Rated Movies',
+			collection: [...top_rated_movies],
 		},
 		comedy: {
 			url: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&sort_by=popularity.desc&with_genres=35',
@@ -340,10 +341,21 @@ export default async function Home() {
 					<Showcase vid={vid} result={showcased} />
 					<div className="fc z-10 mt-10 w-full gap-10 pl-24 sm:pl-32">
 						<ContinueWatching />
-						{Object.keys(data).map((key) => {
-							const collectionItem = data[key as keyof fetchResults];
-							return <Slider key={key} headline={collectionItem.heading} section={collectionItem} />;
-						})}
+						{Object.keys(data)
+							// slice to 2
+							.slice(0, 2)
+							.map((key) => {
+								const collectionItem = data[key as keyof fetchResults];
+								return <Slider key={key} headline={collectionItem.heading} section={collectionItem} />;
+							})}
+						{/* <StreamingServices /> */}
+						{Object.keys(data)
+							// slice to end
+							.slice(2, Object.keys(data).length)
+							.map((key) => {
+								const collectionItem = data[key as keyof fetchResults];
+								return <Slider key={key} headline={collectionItem.heading} section={collectionItem} />;
+							})}
 					</div>
 				</div>
 			</div>

@@ -3,18 +3,15 @@
 import { Button } from '@nextui-org/react';
 import { useEffect, useState } from 'react';
 import { db } from './lib/firebase/firebase';
-import { arrayUnion, doc, setDoc } from 'firebase/firestore';
+import { arrayUnion, doc, getDoc, setDoc } from 'firebase/firestore';
 import { redirect } from 'next/navigation';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
 	const [showDetails, setShowDetails] = useState(false);
 	useEffect(() => {
 		// Log the error to an error reporting service
-		console.log(error);
-		// send to firebase
+		console.error(error);
 		const errorRef = doc(db, 'errors', 'errors');
-		// Set the error in the database, this should include error message, stack trace, date, what page it happened on, etc.
-		// This is useful for debugging and fixing bugs
 
 		const errorData = {
 			message: error.message,
@@ -25,8 +22,26 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 
 		console.log(errorData);
 
-		// Set the error in the database
-		setDoc(errorRef, { errors: arrayUnion(errorData) }, { merge: true });
+		const fetchErrors = async () => {
+			const docSnap = await getDoc(errorRef);
+
+			if (docSnap.exists()) {
+				const existingErrors = docSnap.data().errors;
+
+				// Check if an error with the same message and page already exists
+				const errorExists = existingErrors.some((err) => err.message === errorData.message && err.page === errorData.page);
+
+				// Only log the new error if it doesn't already exist
+				if (!errorExists) {
+					setDoc(errorRef, { errors: arrayUnion(errorData) }, { merge: true });
+				}
+			} else {
+				// If the document doesn't exist, create it with the new error
+				setDoc(errorRef, { errors: arrayUnion(errorData) }, { merge: true });
+			}
+		};
+
+		fetchErrors();
 	}, [error]);
 
 	return (
