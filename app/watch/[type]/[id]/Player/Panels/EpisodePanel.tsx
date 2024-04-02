@@ -28,8 +28,8 @@ export const EpisodePanel = () => {
 		>
 			<div className="h-full w-full px-10 py-10" onClick={() => setEpisodePanelVisible(false)} />
 
-			<div className="absolute py-20 pt-10 fc justify-end h-full bottom-0 right-5 z-20 w-full max-w-[350px] pointer-events-none">
-				<div className="fc w-full h-full justify-start gap-2 rounded-2xl bg-black/70 px-5 py-6 text-white/70 shadow-xl backdrop-blur-2xl overflow-hidden pointer-events-auto">
+			<div className="absolute py-20 pt-10 fc h-full bottom-0 right-5 z-20 w-full max-w-[350px] pointer-events-none overflow-hidden">
+				<div className="w-full h-full bg-black/70  text-white/70 shadow-xl backdrop-blur-2xl pointer-events-auto rounded-2xl relative">
 					<ScrollShadow
 						hideScrollBar
 						className="fc absolute h-full w-full transform-gpu justify-start px-8 py-5"

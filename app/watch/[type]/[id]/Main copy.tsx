@@ -104,7 +104,6 @@ radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);`;
 
 	const [value] = useDocumentData(doc(db, 'users/' + user?.uid));
 
-	const ca = useAddToContinueWatching(result?.media_type, result?.id);
 	const { set } = useSetTracker();
 
 	// if release date of the content is in the future, show a countdown timer
@@ -149,16 +148,6 @@ radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%);`;
 				set(season, episode, id);
 			}
 		}
-
-		const timer = setTimeout(
-			() => {
-				if (result) {
-					ca.add();
-				}
-			},
-			1000 * 60 * 5
-		); // 5 minutes
-		return () => clearTimeout(timer);
 	}, [user, result, value]);
 
 	useEffect(() => {
