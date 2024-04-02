@@ -251,7 +251,9 @@ const getYtVid = async (result: MovieDetails | ShowDetails, media_type: string) 
 	let res = await vid.json();
 	res = res.results;
 
-	const { key } = res.find((vid) => vid.name === 'Official Trailer');
+	console.log(res);
+
+	const { key } = res.find((vid) => vid.name === 'Official Trailer' && typeof vid.key == 'string' && vid.site === 'YouTube');
 	const y = await ytdl.getInfo(key);
 
 	const formats: videoFormat[] = [...y.player_response.streamingData.adaptiveFormats, ...y.player_response.streamingData.formats];
