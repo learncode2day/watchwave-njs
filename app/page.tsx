@@ -341,7 +341,7 @@ export default async function Home() {
 			<div className="fc w-screen justify-start">
 				<div className="fc mb-10 h-full w-full items-start justify-start">
 					<Showcase vid={vid} result={showcased} />
-					<div className="fc z-10 mt-10 w-full gap-10 pl-24 sm:pl-32">
+					<div className="fc z-10 mt-10 w-full gap-10  sm:pl-24 md:pl-32">
 						<ContinueWatching />
 						{Object.keys(data)
 							// slice to 2

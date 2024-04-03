@@ -17,9 +17,11 @@ import { UserAuth } from '@/app/context/AuthContext';
 import Cast from './Cast';
 import { useMainStore } from '@/app/store/main-state-provider';
 import Loading from '@/app/loading';
+import Collection from './Collection';
 
 const Details = () => {
 	const { setPlayerVisibility, result, sections } = useMainStore((state) => state);
+	console.log(result);
 	const { user } = UserAuth();
 	const [value, loading, error] = useDocumentData(doc(db, 'commentsCollection/' + result?.media_type));
 	const [value2, loading2, error2] = useDocumentData(doc(db, 'users/' + user?.uid));
@@ -73,6 +75,7 @@ const Details = () => {
 								<CommentSlider user={user} comments={value[result?.id] || null} mediatype={result.media_type} id={result.id} />
 							</div>
 						)} */}
+						{result.belongs_to_collection && <Collection collection={result.belongs_to_collection} />}
 						<Videos videos={videos} />
 						<Reccomendations recommendations={recommendations} />
 						<Cast credits={credits} imdbId={external.imdb_id} />

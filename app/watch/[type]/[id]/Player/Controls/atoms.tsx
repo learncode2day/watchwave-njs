@@ -56,39 +56,47 @@ export const Volume = ({ changeVolume }: { changeVolume: (value: number | number
 	};
 
 	return (
-		<div className="fr gap-1" onMouseEnter={() => setVolumeVisible(true)} onMouseLeave={() => setVolumeVisible(false)}>
+		<div
+			className="fr gap-1 pointer-events-auto"
+			onMouseEnter={() => {
+				console.log('entering');
+				setVolumeVisible(true);
+			}}
+			onMouseLeave={() => {
+				console.log('leaving');
+				setVolumeVisible(false);
+			}}
+		>
 			<div className="atom" onClick={() => setMuted(!muted)}>
 				{getVolumeIcon()}
 			</div>
-			<AnimatePresence>
-				{volumeVisible && (
-					// width 100% with framer motion
-					<motion.div
-						initial={{ opacity: 0, width: 0 }}
-						animate={{ opacity: 1, width: 'auto' }}
-						exit={{ opacity: 0, width: 0 }}
-						transition={{ duration: 0.1 }}
-					>
-						<Slider
-							aria-label="Volume"
-							size="lg"
-							color="foreground"
-							classNames={{
-								track: 'h-1 data-[thumb-hidden=false]:border-x-0 rounded-full',
-								thumb: 'w-4 h-4 after:bg-white after:w-4 after:h-4 before:w-4 before:h-4',
-								filler: 'h-1 rounded-full after:rounded-full',
-							}}
-							className="w-[80px]"
-							onChange={changeVolume}
-							onClick={(e) => e.currentTarget.blur()}
-							value={volume}
-							maxValue={1}
-							minValue={0}
-							step={0.01}
-						/>
-					</motion.div>
-				)}
-			</AnimatePresence>
+			{volumeVisible && (
+				// width 100% with framer motion
+				<motion.div
+					initial={{ opacity: 0, width: 0 }}
+					animate={{ opacity: 1, width: 'auto' }}
+					exit={{ opacity: 0, width: 0 }}
+					transition={{ duration: 0.1 }}
+				>
+					<Slider
+						aria-label="Volume"
+						size="lg"
+						color="foreground"
+						classNames={{
+							track: 'h-1 data-[thumb-hidden=false]:border-x-0 rounded-full',
+							thumb: 'w-4 h-4 after:bg-white after:w-4 after:h-4 before:w-4 before:h-4',
+							filler: 'h-1 rounded-full after:rounded-full',
+						}}
+						className="w-[80px]"
+						onChange={changeVolume}
+						onClick={(e) => e.currentTarget.blur()}
+						value={volume}
+						maxValue={1}
+						minValue={0}
+						step={0.01}
+					/>
+				</motion.div>
+			)}
 		</div>
 	);
 };
