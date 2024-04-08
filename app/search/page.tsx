@@ -5,6 +5,7 @@ import options from "@/app/lib/options";
 import { Movie, Show } from "@/types";
 import { Input } from "@nextui-org/react";
 import { IoSearch } from "react-icons/io5";
+import { fetchDMCA } from "../lib/fetchDMCA";
 import SearchResults from "./SearchResults";
 
 const Search: React.FC = () => {
