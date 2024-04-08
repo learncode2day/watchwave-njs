@@ -21,7 +21,6 @@ import { db } from '@/app/lib/firebase/firebase';
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 import { ModalManager } from '@/app/lib/ModalManager';
 import { format } from 'date-fns';
-import { fetchDMCA } from '@/app/lib/fetchDMCA';
 
 const Main = ({ params }: { params: { type: string; id: number } }) => {
 	const { id, type } = params;
