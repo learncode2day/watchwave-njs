@@ -11,14 +11,12 @@ import SearchResults from "./SearchResults";
 const Search: React.FC = () => {
   const [fieldQuery, setFieldQuery] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [filteredData, setFilteredData] = useState<(Movie | Show)[]>([]);
-  const [allData, setAllData] = useState<{ results: (Movie | Show)[] }>({
-    results: [],
-  });
+  const [filteredData, setFilteredData] = useState([]);
+  const [allData, setAllData] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPages, setTotalPages] = useState<number | null>(null);
+  const [totalPages, setTotalPages] = useState(null);
 
-  const filterDMCA = async (d: (Movie | Show)[]): Promise<(Movie | Show)[]> => {
+  const filterDMCA = async (d) => {
     // collection "dmca", document "dmca", array "notices" inside array are numbers that are the id of the content
     // if the id of the content is in the array, remove it
     // fetch dmca data
@@ -41,6 +39,10 @@ const Search: React.FC = () => {
     }
   }, [fieldQuery]);
 
+  // useEffect(() => {
+  // 	console.log(fieldQuery);
+  // }, [fieldQuery]);
+
   const debouncedSearch = useCallback(
     debounce((query: string) => {
       if (!query) return;
@@ -50,12 +52,12 @@ const Search: React.FC = () => {
         `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=${page}`,
         options,
       )
-       .then((res) => res.json())
-       .then((data) => {
+        .then((res) => res.json())
+        .then((data) => {
           setTotalPages(data.total_pages);
           setAllData(data);
           data.results = data.results.filter(
-            (result: Movie | Show) => result.media_type!== "person",
+            (result: Movie | Show) => result.media_type !== "person",
           );
           setIsLoading(false);
           console.log(data.results);
@@ -79,10 +81,10 @@ const Search: React.FC = () => {
       `https://api.themoviedb.org/3/search/multi?query=${fieldQuery}&include_adult=false&language=en-US&page=${page}`,
       options,
     )
-     .then((res) => res.json())
-     .then((data) => {
+      .then((res) => res.json())
+      .then((data) => {
         data.results = data.results.filter(
-          (result: Movie | Show) => result.media_type!== "person",
+          (result: Movie | Show) => result.media_type !== "person",
         );
         setIsLoading(false);
         setAllData(data);
