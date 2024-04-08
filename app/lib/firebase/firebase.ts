@@ -3,13 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 export const firebaseApp = {
-  apiKey: "AIzaSyCORF8nvo4Mc1qQnRIhTcqtPUbshR9vd4Q",
-  authDomain: "watchwave-ca3cd.firebaseapp.com",
-  projectId: "watchwave-ca3cd",
-  storageBucket: "watchwave-ca3cd.appspot.com",
-  messagingSenderId: "422821315752",
-  appId: "1:422821315752:web:4bd69f4a3e254b67e32e9d",
-  measurementId: "G-L6ZH6DC6SH",
+apiKey: "AIzaSyCukOk3mtyK52rtfncfCh43CmCIeJfz9Og",
+  authDomain: "streamstarnode.firebaseapp.com",
+  projectId: "streamstarnode",
+  storageBucket: "streamstarnode.appspot.com",
+  messagingSenderId: "563639367279",
+  appId: "1:563639367279:web:b30145b5e176fe01b17f9a",
+  measurementId: "G-J6Z0Q25N8N",
 };
 
 export const app = initializeApp(firebaseApp);
