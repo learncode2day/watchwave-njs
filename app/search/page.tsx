@@ -5,7 +5,6 @@ import options from "@/app/lib/options";
 import { Movie, Show } from "@/types";
 import { Input } from "@nextui-org/react";
 import { IoSearch } from "react-icons/io5";
-import { fetchDMCA } from "../lib/fetchDMCA";
 import SearchResults from "./SearchResults";
 
 const Search: React.FC = () => {
@@ -16,20 +15,6 @@ const Search: React.FC = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
 
-  const filterDMCA = async (d) => {
-    // collection "dmca", document "dmca", array "notices" inside array are numbers that are the id of the content
-    // if the id of the content is in the array, remove it
-    // fetch dmca data
-    let dmca = await fetchDMCA();
-    // console.log(dmca);
-    const filtered = d.filter((result: Movie | Show) => {
-      if (!dmca.includes(result.id)) {
-        return result;
-      }
-    });
-    console.log(filtered);
-    return filtered;
-  };
 
   useEffect(() => {
     if (fieldQuery === "") {
@@ -61,9 +46,6 @@ const Search: React.FC = () => {
           );
           setIsLoading(false);
           console.log(data.results);
-          filterDMCA(data.results).then((d) => {
-            setFilteredData(() => [...d]);
-          });
         });
       setPage(1);
     }, 800),
@@ -88,9 +70,6 @@ const Search: React.FC = () => {
         );
         setIsLoading(false);
         setAllData(data);
-        filterDMCA(data.results).then((d) => {
-          setFilteredData([...d]);
-        });
       });
   }, [page]);
 
